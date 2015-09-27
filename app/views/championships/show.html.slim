@@ -3,7 +3,8 @@
 p
   strong Name:
   = @championship.name
-= render @championship.seasons
+.row
+  == render @championship.seasons
 
 = link_to 'Edit', edit_championship_path(@championship)
 '|
