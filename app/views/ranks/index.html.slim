@@ -1,0 +1,29 @@
+h1 Listing ranks
+
+table
+  thead
+    tr
+      th Win
+      th Defeat
+      th Nul
+      th Winot
+      th Defeatot
+      th
+      th
+      th
+
+  tbody
+    - @ranks.each do |rank|
+      tr
+        td = rank.win
+        td = rank.defeat
+        td = rank.nul
+        td = rank.winOT
+        td = rank.defeatOT
+        td = link_to 'Show', rank
+        td = link_to 'Edit', edit_rank_path(rank)
+        td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Rank', new_rank_path

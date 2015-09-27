@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  win: 1
+  defeat: 1
+  nul: 1
+  winOT: 1
+  defeatOT: 1
+
+two:
+  win: 1
+  defeat: 1
+  nul: 1
+  winOT: 1
+  defeatOT: 1

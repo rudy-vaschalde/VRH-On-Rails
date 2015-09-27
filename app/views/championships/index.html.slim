@@ -1,0 +1,21 @@
+h1 Listing championships
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @championships.each do |championship|
+      tr
+        td = championship.name
+        td = link_to 'Show', championship
+        td = link_to 'Edit', edit_championship_path(championship)
+        td = link_to 'Destroy', championship, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Championship', new_championship_path

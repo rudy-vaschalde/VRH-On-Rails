@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Firstname:
+  = @player.firstName
+p
+  strong Lastname:
+  = @player.lastName
+p
+  strong Surname:
+  = @player.surname
+p
+  strong Height:
+  = @player.height
+p
+  strong Weight:
+  = @player.weight
+p
+  strong Photo:
+  = @player.photo
+p
+  strong Team:
+  = @player.team
+
+= link_to 'Edit', edit_player_path(@player)
+'|
+= link_to 'Back', players_path

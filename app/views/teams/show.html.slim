@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @team.name
+p
+  strong City:
+  = @team.city
+p
+  strong Logo path:
+  = @team.logo_path
+
+= link_to 'Edit', edit_team_path(@team)
+'|
+= link_to 'Back', teams_path
