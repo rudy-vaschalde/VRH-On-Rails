@@ -1,1 +1,1 @@
-json.extract! @rank, :id, :win, :defeat, :nul, :winOT, :defeatOT, :created_at, :updated_at
+json.extract! @rank, :id, :win, :loss, :tie, :win_ot, :loss_ot, :created_at, :updated_at

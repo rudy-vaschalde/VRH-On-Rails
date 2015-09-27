@@ -24,8 +24,7 @@ class SeasonsController < ApplicationController
   # POST /seasons
   # POST /seasons.json
   def create
-    @championship = Championship.find(params(:championship_id))
-    @season = @championship.seasons.create(season_params)
+    @season = Season.new(season_params)
 
     respond_to do |format|
       if @season.save
@@ -70,6 +69,6 @@ class SeasonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def season_params
-      params.require(:season).permit(:name)
+      params.require(:season).permit(:name, :championship_id)
     end
 end

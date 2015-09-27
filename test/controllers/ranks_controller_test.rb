@@ -18,7 +18,7 @@ class RanksControllerTest < ActionController::TestCase
 
   test "should create rank" do
     assert_difference('Rank.count') do
-      post :create, rank: { defeat: @rank.defeat, defeatOT: @rank.defeatOT, nul: @rank.nul, win: @rank.win, winOT: @rank.winOT }
+      post :create, rank: { loss: @rank.loss, loss_ot: @rank.loss_ot, tie: @rank.tie, win: @rank.win, win_ot: @rank.win_ot }
     end
 
     assert_redirected_to rank_path(assigns(:rank))
@@ -35,7 +35,7 @@ class RanksControllerTest < ActionController::TestCase
   end
 
   test "should update rank" do
-    patch :update, id: @rank, rank: { defeat: @rank.defeat, defeatOT: @rank.defeatOT, nul: @rank.nul, win: @rank.win, winOT: @rank.winOT }
+    patch :update, id: @rank, rank: { loss: @rank.loss, loss_ot: @rank.loss_ot, tie: @rank.tie, win: @rank.win, win_ot: @rank.win_ot }
     assert_redirected_to rank_path(assigns(:rank))
   end
 

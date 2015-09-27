@@ -3,7 +3,7 @@ h1 Listing players
 table
   thead
     tr
-      th Firstname
+      th first_name
       th Lastname
       th Surname
       th Height
@@ -17,7 +17,7 @@ table
   tbody
     - @players.each do |player|
       tr
-        td = player.firstName
+        td = player.first_name
         td = player.lastName
         td = player.surname
         td = player.height

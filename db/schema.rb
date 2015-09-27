@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 20150927204747) do
 
   create_table "ranks", force: :cascade do |t|
     t.integer  "win"
-    t.integer  "defeat"
+    t.integer  "loss"
     t.integer  "tie"
     t.integer  "win_ot"
-    t.integer  "defeat_ot"
+    t.integer  "loss_ot"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "season_id"

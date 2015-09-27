@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  firstName: MyString
+  first_name: MyString
   lastName: MyString
   surname: MyString
   height: 1
   weight: 1
   photo: MyString
-  team_id: 
+  team_id:
 
 two:
-  firstName: MyString
+  first_name: MyString
   lastName: MyString
   surname: MyString
   height: 1
   weight: 1
   photo: MyString
-  team_id: 
+  team_id:

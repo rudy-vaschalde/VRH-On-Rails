@@ -2,14 +2,14 @@
 
 one:
   win: 1
-  defeat: 1
-  nul: 1
-  winOT: 1
-  defeatOT: 1
+  loss: 1
+  tie: 1
+  win_ot: 1
+  loss_ot: 1
 
 two:
   win: 1
-  defeat: 1
-  nul: 1
-  winOT: 1
-  defeatOT: 1
+  loss: 1
+  tie: 1
+  win_ot: 1
+  loss_ot: 1

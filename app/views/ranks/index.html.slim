@@ -4,10 +4,10 @@ table
   thead
     tr
       th Win
-      th Defeat
-      th Nul
-      th Winot
-      th Defeatot
+      th loss
+      th tie
+      th win_ot
+      th loss_ot
       th
       th
       th
@@ -16,10 +16,10 @@ table
     - @ranks.each do |rank|
       tr
         td = rank.win
-        td = rank.defeat
-        td = rank.nul
-        td = rank.winOT
-        td = rank.defeatOT
+        td = rank.loss
+        td = rank.tie
+        td = rank.win_ot
+        td = rank.loss_ot
         td = link_to 'Show', rank
         td = link_to 'Edit', edit_rank_path(rank)
         td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete

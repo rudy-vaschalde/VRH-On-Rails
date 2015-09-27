@@ -1,0 +1,19 @@
+h1 = season.name
+table.table
+  thead
+    tr
+      th Équipe
+      th V
+      th D
+      th N
+      th Vp
+      th Dp
+  tbody
+    - season.ranks.each do |rank|
+      tr
+        td = rank.team.name
+        td = rank.win
+        td = rank.loss
+        td = rank.tie
+        td = rank.win_ot
+        td = rank.loss_ot

@@ -1,20 +1,20 @@
-p#notice = notice
+
 
 p
   strong Win:
   = @rank.win
 p
-  strong Defeat:
-  = @rank.defeat
+  strong loss:
+  = @rank.loss
 p
-  strong Nul:
-  = @rank.nul
+  strong tie:
+  = @rank.tie
 p
-  strong Winot:
-  = @rank.winOT
+  strong win_ot:
+  = @rank.win_ot
 p
-  strong Defeatot:
-  = @rank.defeatOT
+  strong loss_ot:
+  = @rank.loss_ot
 
 = link_to 'Edit', edit_rank_path(@rank)
 '|
