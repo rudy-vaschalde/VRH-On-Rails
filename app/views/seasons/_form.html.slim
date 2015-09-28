@@ -8,6 +8,6 @@
 
 
   = f.text_field :name
-  = f.select "championship_id", options_from_collection_for_select(Championship.all, 'id', 'name', Championship.all.map(&:id))
-  = f.select "team_ids", options_from_collection_for_select(Team.all, 'id', 'name', Team.all.map(&:id)), {label: 'équipes'}, multiple: true
+  = f.select "championship_id", options_from_collection_for_select(Championship.all, 'id', 'name', @season.championship_id)
+  = f.select "team_ids", options_from_collection_for_select(Team.all, 'id', 'name', @season.teams.collect(&:id)), {label: 'équipes'}, multiple: true
   = f.submit
