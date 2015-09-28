@@ -6,4 +6,7 @@ class Season < ActiveRecord::Base
   validates :name, presence: true
   validates_format_of :name, with: /[0-9]{4} \- [0-9]{4}/
 
+  def ordered_ranks
+    ranks.sort{ |a,b| a.points <=> b.points }.reverse
+  end
 end

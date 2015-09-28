@@ -16,14 +16,14 @@ javascript:
         th Dp
         th Pts
     tbody
-      - season.ranks.each do |rank|
+      - season.ordered_ranks.each_with_index do |rank, index|
         tr
-          td
+          td = index+1
           td = rank.team.name
-          td = rank.win+rank.loss+rank.tie+rank.win_ot+rank.loss_ot
+          td = rank.game_count
           td = rank.win
           td = rank.loss
           td = rank.tie
           td = rank.win_ot
           td = rank.loss_ot
-          td.pts = rank.win*3+rank.tie+rank.win_ot*2+rank.loss_ot
+          td.pts = rank.points
