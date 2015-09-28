@@ -1,4 +1,4 @@
-= form_for @team do |f|
+= bootstrap_form_for @team do |f|
   - if @team.errors.any?
     #error_explanation
       h2 = "#{pluralize(@team.errors.count, "error")} prohibited this team from being saved:"
@@ -6,13 +6,7 @@
         - @team.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :logo_path
-    = f.text_field :logo_path
-  .actions = f.submit
+  = f.text_field :name
+  = f.text_field :city
+  = f.text_field :logo_path
+  = f.submit

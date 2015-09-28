@@ -6,9 +6,17 @@
         - @rank.errors.full_messages.each do |message|
           li = message
 
-  = f.number_field :win
-  = f.number_field :loss
-  = f.number_field :tie
-  = f.number_field :win_ot
-  = f.number_field :loss_ot
+  = f.select "team_id", options_from_collection_for_select(Team.all, 'id', 'name', Team.all.map(&:id))
+  .row
+    .col-md-2
+      = f.number_field :win
+    .col-md-2
+      = f.number_field :loss
+    .col-md-2
+      = f.number_field :tie
+    .col-md-2
+      = f.number_field :win_ot
+    .col-md-2
+      = f.number_field :loss_ot
+    .col-md-2
   = f.submit

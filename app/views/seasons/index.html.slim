@@ -1,6 +1,6 @@
 h1 Listing seasons
 
-table
+table.table
   thead
     tr
       th Name
@@ -12,10 +12,10 @@ table
     - @seasons.each do |season|
       tr
         td = season.name
-        td = link_to 'Show', season
-        td = link_to 'Edit', edit_season_path(season)
-        td = link_to 'Destroy', season, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', season, class: 'btn btn-default'
+        td = link_to 'Edit', edit_season_path(season), class: 'btn btn-warning'
+        td = link_to 'Destroy', season, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
 br
 
-= link_to 'New Season', new_season_path
+= link_to 'New Season', new_season_path, class: 'btn btn-primary'

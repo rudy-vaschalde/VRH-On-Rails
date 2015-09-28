@@ -1,6 +1,6 @@
 h1 Listing championships
 
-table
+table.table
   thead
     tr
       th Name
@@ -12,10 +12,10 @@ table
     - @championships.each do |championship|
       tr
         td = championship.name
-        td = link_to 'Show', championship
-        td = link_to 'Edit', edit_championship_path(championship)
-        td = link_to 'Destroy', championship, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', championship, class: 'btn btn-default'
+        td = link_to 'Edit', edit_championship_path(championship), class: 'btn btn-warning'
+        td = link_to 'Destroy', championship, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
 br
 
-= link_to 'New Championship', new_championship_path
+= link_to 'New Championship', new_championship_path, class: 'btn btn-primary'

@@ -1,20 +1,29 @@
+javascript:
+
+
 .col-md-6
   h1 = season.name
   table.table
     thead
       tr
+        th P
         th Équipe
+        th J
         th V
         th D
         th N
         th Vp
         th Dp
+        th Pts
     tbody
       - season.ranks.each do |rank|
         tr
+          td
           td = rank.team.name
+          td = rank.win+rank.loss+rank.tie+rank.win_ot+rank.loss_ot
           td = rank.win
           td = rank.loss
           td = rank.tie
           td = rank.win_ot
           td = rank.loss_ot
+          td.pts = rank.win*3+rank.tie+rank.win_ot*2+rank.loss_ot

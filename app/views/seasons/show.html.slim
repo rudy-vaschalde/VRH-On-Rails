@@ -1,8 +1,8 @@
 
 
-p
-  strong Name:
-  = @season.name
+h2 = @season.name
+
+== render @season
 
 = link_to 'Edit', edit_season_path(@season)
 '|
