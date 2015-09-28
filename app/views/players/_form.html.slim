@@ -6,25 +6,11 @@
         - @player.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :first_name
     = f.text_field :first_name
-  .field
-    = f.label :lastName
     = f.text_field :lastName
-  .field
-    = f.label :surname
     = f.text_field :surname
-  .field
-    = f.label :height
     = f.number_field :height
-  .field
-    = f.label :weight
     = f.number_field :weight
-  .field
-    = f.label :photo
     = f.text_field :photo
-  .field
-    = f.label :team
     = f.text_field :team
-  .actions = f.submit
+    = f.submit

@@ -34,13 +34,13 @@ ActiveRecord::Schema.define(version: 20150927204747) do
   add_index "players", ["team_id"], name: "index_players_on_team_id"
 
   create_table "ranks", force: :cascade do |t|
-    t.integer  "win"
-    t.integer  "loss"
-    t.integer  "tie"
-    t.integer  "win_ot"
-    t.integer  "loss_ot"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "win",        default: 0
+    t.integer  "loss",       default: 0
+    t.integer  "tie",        default: 0
+    t.integer  "win_ot",     default: 0
+    t.integer  "loss_ot",    default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "season_id"
     t.integer  "team_id"
   end
