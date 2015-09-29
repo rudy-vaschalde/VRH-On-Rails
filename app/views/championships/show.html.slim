@@ -1,11 +1,8 @@
-
-
 p
   strong Name:
   = @championship.name
 .row
   == render @championship.seasons
 
-= link_to 'Edit', edit_championship_path(@championship)
-'|
-= link_to 'Back', championships_path
+=> link_to 'Edit', edit_championship_path(@championship)
+=> link_to 'Back', championships_path

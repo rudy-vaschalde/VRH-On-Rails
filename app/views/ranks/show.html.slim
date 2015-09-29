@@ -1,5 +1,3 @@
-
-
 p
   strong Win:
   = @rank.win
@@ -16,6 +14,5 @@ p
   strong loss_ot:
   = @rank.loss_ot
 
-= link_to 'Edit', edit_rank_path(@rank)
-'|
-= link_to 'Back', ranks_path
+=> link_to 'Edit', edit_rank_path(@rank)
+=> link_to 'Back', ranks_path
