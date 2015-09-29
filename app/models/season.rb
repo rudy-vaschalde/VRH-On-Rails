@@ -1,5 +1,5 @@
 class Season < ActiveRecord::Base
-  belongs_to :championship
+  belongs_to :championship, required: true
   has_many :ranks
   has_many :teams, through: :ranks
 
