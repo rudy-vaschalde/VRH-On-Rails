@@ -1,6 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  team: one
+  season: two
   win: 1
   loss: 1
   tie: 1
@@ -8,6 +10,8 @@ one:
   loss_ot: 1
 
 two:
+  team: two
+  season: one
   win: 1
   loss: 1
   tie: 1

@@ -3,6 +3,7 @@ require 'test_helper'
 class SeasonsControllerTest < ActionController::TestCase
   setup do
     @season = seasons(:one)
+    @championship = championships(:one)
   end
 
   test "should get index" do
@@ -18,9 +19,8 @@ class SeasonsControllerTest < ActionController::TestCase
 
   test "should create season" do
     assert_difference('Season.count') do
-      post :create, season: { name: @season.name }
+      post :create, season: { name: "2015 - 2016", team_ids: [teams(:one).id], championship_id: @championship }
     end
-
     assert_redirected_to season_path(assigns(:season))
   end
 

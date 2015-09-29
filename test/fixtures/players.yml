@@ -2,7 +2,7 @@
 
 one:
   first_name: MyString
-  lastName: MyString
+  last_name: MyString
   surname: MyString
   height: 1
   weight: 1
@@ -11,7 +11,7 @@ one:
 
 two:
   first_name: MyString
-  lastName: MyString
+  last_name: MyString
   surname: MyString
   height: 1
   weight: 1

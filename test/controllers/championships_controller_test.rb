@@ -18,7 +18,7 @@ class ChampionshipsControllerTest < ActionController::TestCase
 
   test "should create championship" do
     assert_difference('Championship.count') do
-      post :create, championship: { name: @championship.name }
+      post :create, championship: { name: "2030 - 2031" }
     end
 
     assert_redirected_to championship_path(assigns(:championship))

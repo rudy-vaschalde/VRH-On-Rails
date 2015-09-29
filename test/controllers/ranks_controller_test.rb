@@ -3,6 +3,8 @@ require 'test_helper'
 class RanksControllerTest < ActionController::TestCase
   setup do
     @rank = ranks(:one)
+    @team = teams(:one)
+    @season = seasons(:one)
   end
 
   test "should get index" do
@@ -18,7 +20,7 @@ class RanksControllerTest < ActionController::TestCase
 
   test "should create rank" do
     assert_difference('Rank.count') do
-      post :create, rank: { loss: @rank.loss, loss_ot: @rank.loss_ot, tie: @rank.tie, win: @rank.win, win_ot: @rank.win_ot }
+      post :create, rank: { team_id: @team.id, season_id: @season.id, loss: @rank.loss, loss_ot: @rank.loss_ot, tie: @rank.tie, win: @rank.win, win_ot: @rank.win_ot }
     end
 
     assert_redirected_to rank_path(assigns(:rank))
