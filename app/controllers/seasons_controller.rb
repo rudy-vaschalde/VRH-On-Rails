@@ -70,11 +70,11 @@ class SeasonsController < ApplicationController
 
     def init_ranks
       # FIXME wowowowow what the fuck with the empty team_id
-      @season.ranks = params[:season][:team_ids].select{|team_id| !team_id.blank?}.map{|team_id| Rank.new(team_id: team_id)}
+      @season.ranks = season_params[:team_ids].select{|team_id| !team_id.blank?}.map{|team_id| Rank.new(team_id: team_id)}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def season_params
-      params.require(:season).permit(:name, :championship_id, :team_ids)
+      params.require(:season).permit(:name, :championship_id, team_ids: [])
     end
 end
