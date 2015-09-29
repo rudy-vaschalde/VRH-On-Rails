@@ -24,8 +24,7 @@ class SeasonsController < ApplicationController
   # POST /seasons
   # POST /seasons.json
   def create
-    @season = Season.new(season_params.except(:team_ids))
-    init_ranks
+    @season = Season.new(season_params)
     respond_to do |format|
       if @season.save
         format.html { redirect_to @season, notice: 'Season was successfully created.' }
@@ -40,7 +39,6 @@ class SeasonsController < ApplicationController
   # PATCH/PUT /seasons/1
   # PATCH/PUT /seasons/1.json
   def update
-    init_ranks
     respond_to do |format|
       if @season.update(season_params)
         format.html { redirect_to @season, notice: 'Season was successfully updated.' }
@@ -66,11 +64,6 @@ class SeasonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_season
       @season = Season.find(params[:id])
-    end
-
-    def init_ranks
-      # FIXME wowowowow what the fuck with the empty team_id
-      @season.ranks = season_params[:team_ids].select{|team_id| !team_id.blank?}.map{|team_id| Rank.new(team_id: team_id)}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
