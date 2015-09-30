@@ -1,0 +1,23 @@
+h1 Listing assists
+
+table
+  thead
+    tr
+      th Goal
+      th Player
+      th
+      th
+      th
+
+  tbody
+    - @assists.each do |assist|
+      tr
+        td = assist.goal
+        td = assist.player
+        td = link_to 'Show', assist
+        td = link_to 'Edit', edit_assist_path(assist)
+        td = link_to 'Destroy', assist, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Assist', new_assist_path

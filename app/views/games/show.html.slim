@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Match day:
+  = @game.match_day
+p
+  strong Overtime:
+  = @game.overtime
+
+= link_to 'Edit', edit_game_path(@game)
+'|
+= link_to 'Back', games_path

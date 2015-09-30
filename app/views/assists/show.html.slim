@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Goal:
+  = @assist.goal
+p
+  strong Player:
+  = @assist.player
+
+= link_to 'Edit', edit_assist_path(@assist)
+'|
+= link_to 'Back', assists_path

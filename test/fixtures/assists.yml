@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal_id: 
+  player_id: 
+
+two:
+  goal_id: 
+  player_id: 
