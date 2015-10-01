@@ -11,13 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927204747) do
+ActiveRecord::Schema.define(version: 20151001141839) do
 
   create_table "championships", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "games", force: :cascade do |t|
+    t.datetime "match_day"
+    t.boolean  "overtime"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "home_team_id"
+    t.integer  "visitor_team_id"
+  end
+
+  add_index "games", ["home_team_id"], name: "index_games_on_home_team_id"
+  add_index "games", ["visitor_team_id"], name: "index_games_on_visitor_team_id"
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "scorer_id"
+    t.integer  "passer_id"
+    t.integer  "team_id"
+  end
+
+  add_index "goals", ["game_id"], name: "index_goals_on_game_id"
+  add_index "goals", ["passer_id"], name: "index_goals_on_passer_id"
+  add_index "goals", ["scorer_id"], name: "index_goals_on_scorer_id"
+  add_index "goals", ["team_id"], name: "index_goals_on_team_id"
 
   create_table "players", force: :cascade do |t|
     t.string   "first_name"

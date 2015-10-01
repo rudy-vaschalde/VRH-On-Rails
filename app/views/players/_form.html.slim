@@ -1,4 +1,4 @@
-= form_for @player do |f|
+= bootstrap_form_for @player do |f|
   - if @player.errors.any?
     #error_explanation
       h2 = "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
