@@ -7,7 +7,7 @@ one:
   height: 1
   weight: 1
   photo: MyString
-  team_id:
+  team: one
 
 two:
   first_name: MyString
@@ -16,4 +16,4 @@ two:
   height: 1
   weight: 1
   photo: MyString
-  team_id:
+  team: two
