@@ -6,6 +6,8 @@ class Goal < ActiveRecord::Base
 
   validate :belongs_to_team, on: :create
 
+  scope :score, -> {count}
+
   private
     # If the player is set for a goal, check that he belongs to the given team!
     # Only on creation, because he can change team in the future
