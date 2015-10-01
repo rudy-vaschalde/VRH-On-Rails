@@ -8,5 +8,8 @@ p
   strong Logo path:
   = @team.logo_path
 
+- @team.all_games.each do |game|
+  p = game.match_day
+
 => link_to 'Edit', edit_team_path(@team)
 => link_to 'Back', teams_path
