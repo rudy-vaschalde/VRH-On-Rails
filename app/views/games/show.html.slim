@@ -7,6 +7,12 @@ p
   strong Overtime:
   = @game.overtime
 
-= link_to 'Edit', edit_game_path(@game)
-'|
-= link_to 'Back', games_path
+p
+  strong Visitor:
+  = @game.visitor_team.name
+p
+  strong Home:
+  = @game.home_team.name
+
+=> link_to 'Edit', edit_game_path(@game)
+=> link_to 'Back', games_path
