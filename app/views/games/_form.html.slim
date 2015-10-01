@@ -6,6 +6,8 @@
         - @game.errors.full_messages.each do |message|
           li = message
 
-    = f.datetime_select :match_day
-    = f.check_box :overtime
-    = f.submit
+  = f.datetime_select :match_day
+  = f.check_box :overtime
+  = f.select :home_team_id, options_from_collection_for_select(Team.all, 'id', 'name'), {label: "Équipe d'accueil"}
+  = f.select :visitor_team_id, options_from_collection_for_select(Team.all, 'id', 'name'), {label: "Équipe visiteur"}
+  = f.submit
