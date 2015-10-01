@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :assists
-  resources :goals
   resources :games
   resources :players
   resources :ranks
