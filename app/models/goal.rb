@@ -10,6 +10,6 @@ class Goal < ActiveRecord::Base
     # If the player is set for a goal, check that he belongs to the given team!
     # Only on creation, because he can change team in the future
     def belongs_to_team
-       errors.add(:player_id, "ne fait pas parti de l'équipe") unless self.player.nil? || self.player.team == self.team
+      errors.add(:player_id, "ne fait pas parti de l'équipe") unless self.scorer.nil? || self.scorer.team == self.team
     end
 end

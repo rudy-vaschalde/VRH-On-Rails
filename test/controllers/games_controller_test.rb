@@ -3,6 +3,8 @@ require 'test_helper'
 class GamesControllerTest < ActionController::TestCase
   setup do
     @game = games(:one)
+    @team1 = teams(:one)
+    @team2 = teams(:two)
   end
 
   test "should get index" do
@@ -18,7 +20,7 @@ class GamesControllerTest < ActionController::TestCase
 
   test "should create game" do
     assert_difference('Game.count') do
-      post :create, game: { match_day: @game.match_day, overtime: @game.overtime }
+      post :create, game: { match_day: @game.match_day, overtime: @game.overtime, home_team_id: @team1, visitor_team_id: @team2  }
     end
 
     assert_redirected_to game_path(assigns(:game))
@@ -35,7 +37,7 @@ class GamesControllerTest < ActionController::TestCase
   end
 
   test "should update game" do
-    patch :update, id: @game, game: { match_day: @game.match_day, overtime: @game.overtime }
+    patch :update, id: @game, game: { match_day: @game.match_day, overtime: @game.overtime}
     assert_redirected_to game_path(assigns(:game))
   end
 

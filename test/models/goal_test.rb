@@ -8,18 +8,18 @@ class GoalTest < ActiveSupport::TestCase
     @other_team = teams(:two)
   end
 
-  test "should create goal when player belongs to team" do
-    goal = Goal.new player: @player, team: @player.team, game: @game
+  test "should create goal when scorer belongs to team" do
+    goal = Goal.new scorer: @player, team: @player.team, game: @game
     assert goal.valid?
   end
 
-  test "should not create goal when player doesn't belong to the team" do
-    goal = Goal.new player: @player, team: @other_team, game: @game
+  test "should not create goal when scorer doesn't belong to the team" do
+    goal = Goal.new scorer: @player, team: @other_team, game: @game
     assert_not goal.valid?
-    assert_equal goal.errors[:player_id], "ne fait pas parti de l'équipe"
+    assert_equal ["ne fait pas parti de l'équipe"], goal.errors[:player_id]
   end
 
-  test "should create goal when player is not set" do
+  test "should create goal when scorer is not set" do
     goal = Goal.new team: @player.team, game: @game
     assert goal.valid?
   end
