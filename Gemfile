@@ -37,3 +37,8 @@ gem 'slim-rails'
 # gem ‘devise’
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap_form'
+
+# Server
+gem 'puma'
+gem "capistrano-rails", :group => :development
+gem "capistrano3-puma"
