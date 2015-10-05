@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # Temporary root
+  root "seasons#index"
 
   resources :games
   resources :players
