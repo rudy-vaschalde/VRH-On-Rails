@@ -2,6 +2,7 @@ class Rank < ActiveRecord::Base
   belongs_to :season, required: true
   belongs_to :team, required: true
 
+  # TODO Add testcase
   def game_count
     @game_count ||= self.win + self.loss + self.tie + self.win_ot + self.loss_ot
   end

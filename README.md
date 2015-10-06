@@ -2,4 +2,5 @@
 
 ### TODO:
 
-* Add testcases for assists, passers in player_test.rb
+* Fill out the TODO list
+* Testcases for rank.rb methods (game_count, points)

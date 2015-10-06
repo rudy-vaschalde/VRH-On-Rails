@@ -18,7 +18,6 @@ class GameTest < ActiveSupport::TestCase
     assert_equal goals(:two), @game.visitor_goals.first
   end
 
-
   test "a team scored a goal" do
     assert_difference "@game.goals.count", 1 do
       @game.score(:home)
