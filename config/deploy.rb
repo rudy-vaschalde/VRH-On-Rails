@@ -3,12 +3,7 @@ lock '3.4.0'
 
 set :application, "vrh"
 set :repo_url, "https://github.com/rudzy/VRH-On-Rails"
-set :linked_dirs, %w(
-  bin log vendor/bundle public/system
-  tmp/pids tmp/cache tmp/sockets
-)
 set :puma_bind, "tcp://0.0.0.0:8080"
-
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -31,7 +26,6 @@ set :puma_bind, "tcp://0.0.0.0:8080"
 set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
-# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 # Default value for default_env is {}

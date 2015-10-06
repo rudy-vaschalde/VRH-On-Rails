@@ -10,13 +10,6 @@ development:
 test: &test
   <<: *default
   database: db/test.sqlite3
-  # host: localhost
-  # adapter: postgresql
-  # encoding: unicode
-  # database: vrh
-  # pool: 5
-  # username: vrh
-  # password: vrh
 
 production:
   <<: *default

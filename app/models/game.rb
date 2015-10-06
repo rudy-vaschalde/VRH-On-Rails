@@ -4,11 +4,11 @@ class Game < ActiveRecord::Base
   has_many :goals
 
   def home_goals
-    self.goals.where(team: self.home_team)
+    self.home_team.goals
   end
 
   def visitor_goals
-    self.goals.where(team: self.visitor_team)
+    self.visitor_team.goals
   end
 
 end
