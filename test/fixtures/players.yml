@@ -1,18 +1,25 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  first_name: MyString
-  last_name: MyString
-  surname: MyString
+barry:
+  first_name: Barry
+  last_name: Allen
+  surname: The Flash
   height: 1
   weight: 1
   photo: MyString
   team: one
 
-two:
-  first_name: MyString
-  last_name: MyString
-  surname: MyString
+hal_jordan:
+  first_name: Hal
+  last_name: Jordan
+  surname: Green Lantern
+  height: 1
+  weight: 1
+  photo: MyString
+  team: one
+
+diana:
+  first_name: Diana
+  last_name: Unknown
+  surname: Wonderwoman
   height: 1
   weight: 1
   photo: MyString

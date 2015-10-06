@@ -1,5 +1,3 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   name: 2014 - 2015
   championship: one

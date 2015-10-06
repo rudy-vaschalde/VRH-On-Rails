@@ -4,7 +4,7 @@ class GoalTest < ActiveSupport::TestCase
 
   setup do
     @game = games(:one)
-    @player = players(:one)
+    @player = players(:barry)
     @other_team = teams(:two)
   end
 
@@ -29,6 +29,12 @@ class GoalTest < ActiveSupport::TestCase
   test "should create goal when scorer is not set" do
     goal = Goal.new team: @player.team, game: @game
     assert goal.valid?
+  end
+
+  test "the player and the passer are the same" do
+    goal = Goal.new passer: @player, scorer: @player, team: @player.team, game: @game
+    assert_not goal.valid?
+    assert_equal ["ne peut pas être identique au buteur"], goal.errors[:passer_id]
   end
 
 end
