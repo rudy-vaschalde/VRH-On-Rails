@@ -1,4 +1,10 @@
 fr:
+  # FIXME date order
+  date:
+      order:
+        - :year
+        - :month
+        - :year
   devise:
     confirmations:
       confirmed: 'Votre compte a été confirmé avec succès.'

@@ -4,6 +4,7 @@ class SeasonsControllerTest < ActionController::TestCase
   setup do
     @season = seasons(:one)
     @championship = championships(:one)
+    sign_in current_user
   end
 
   test "should get index" do

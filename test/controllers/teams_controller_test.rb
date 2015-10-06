@@ -3,6 +3,7 @@ require 'test_helper'
 class TeamsControllerTest < ActionController::TestCase
   setup do
     @team = teams(:one)
+    sign_in current_user
   end
 
   test "should get index" do

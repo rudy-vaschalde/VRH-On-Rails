@@ -5,6 +5,7 @@ class GamesControllerTest < ActionController::TestCase
     @game = games(:one)
     @team1 = teams(:one)
     @team2 = teams(:two)
+    sign_in current_user
   end
 
   test "should get index" do

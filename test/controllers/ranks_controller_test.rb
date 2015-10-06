@@ -5,6 +5,7 @@ class RanksControllerTest < ActionController::TestCase
     @rank = ranks(:one)
     @team = teams(:one)
     @season = seasons(:one)
+    sign_in current_user
   end
 
   test "should get index" do
