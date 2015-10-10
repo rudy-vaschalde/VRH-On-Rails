@@ -1,2 +1,53 @@
-h1 Public#index
-p Find me in app/views/public/index.html.slim
+#sub-header
+  .container-fluid
+    #header-text
+      h1.brand Les Primates
+      h2.lead Voreppe Roller Hockey
+
+    #next-game-N2.next-game
+      h3 Prochain Match N2
+      p 18/10/2015
+      p Voreppe vs Valence
+
+.container-fluid.content
+  .row
+    #article-container.col-md-9
+      .row
+        .article.col-md-6
+          h3 Article
+          p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
+        .article.col-md-6
+          h3 Article
+          p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
+      .row
+        .article.col-md-6
+          h3 Article
+          p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
+        .article.col-md-6
+          h3 Article
+          p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
+
+    #side-content.col-md-3
+      == render @current_seasons, small: true
+
+
+
+      / h3 Classement N2
+      / table.table
+      /   tr
+      /     th equipe
+      /     th pts
+      /   tr
+      /     td Voreppe
+      /     td 12
+      /   tr
+      /     td Grenoble
+      /     td 10
+      /   tr
+      /     td Besancon
+      /     td 10
+      /   tr
+      /     td Valence
+      /     td 8
+
+

@@ -5,8 +5,9 @@ end
 Championship.create!(name: "National 2")
 Championship.create!(name: "National 4")
 
-Season.create!(name: "2014 - 2015", championship: Championship.first)
-Season.create!(name: "2015 - 2016", championship: Championship.first)
+Season.create!(name: "2014 - 2015", championship: Championship.n2)
+Season.create!(name: "2014 - 2015", championship: Championship.n4)
+Season.create!(name: "2015 - 2016", championship: Championship.n2)
 
 Rank.create!(team: Team.first, season: Season.last, win: 5, loss: 2, tie: 0, win_ot: 1, loss_ot: 0)
 Rank.create!(team: Team.second, season: Season.last, win: 0, loss: 7, tie: 0, win_ot: 1, loss_ot: 1)

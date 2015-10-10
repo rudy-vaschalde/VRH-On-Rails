@@ -1,11 +1,33 @@
 // Layout styles
 #page-body {
-  padding: 35px;
+  padding: 35px 0 0 0 ;
 }
 
 
 #header-navbar{
   .brand-logo{
-    width: 40px;
+    position: relative;
+    top: -9px;
+    width: 45px;
+  }
+
+  .nav.navbar-nav{
+
+    li a:hover{
+      background: $vrh-blue;
+      color: #eee;
+    }
+  }
+
+}
+
+#footer{
+  background: $midnight-blue;
+  padding: 5px 0;
+  width: 100%;
+
+  p{
+    text-align: center;
+    color: $concrete;
   }
 }

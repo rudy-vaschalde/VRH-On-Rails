@@ -1,3 +1,48 @@
 // Place all the styles related to the public controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#sub-header{
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(image_path('photo_vrh1_filtre.png'));
+  background-repeat: no-repeat;
+  background-position: 30% 53%;
+  background-size: 100%;
+
+  #header-text{
+    .brand{
+      font-size: 50px;
+      color: $vrh-blue;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    h2{
+      color: white;
+      margin: 0;
+    }
+  }
+
+
+  .next-game{
+    background: $vrh-blue;
+    float: right;
+    padding: 10px;
+
+    h3{
+      margin: 0;
+      color: #eee;
+    }
+  }
+}
+
+
+.content{
+  padding: 10px 20px;
+
+  .article{
+    height: 200px;
+  }
+
+}
