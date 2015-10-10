@@ -8,11 +8,11 @@ class Championship < ActiveRecord::Base
   end
 
   def self.n2
-    Championship.find_by(name: "National 2")
+    @nat2 ||= Championship.find_by(name: "National 2")
   end
 
   def self.n4
-    Championship.find_by(name: "National 4")
+    @nat4 ||= Championship.find_by(name: "National 4")
   end
 
 end

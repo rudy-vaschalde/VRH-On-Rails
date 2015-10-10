@@ -14,11 +14,11 @@ class Team < ActiveRecord::Base
   end
 
   def self.n2
-    Team.find_by(championship: Championship.n2, city: "Voreppe")
+    @n2 ||= Team.find_by(championship: Championship.n2, city: "Voreppe")
   end
 
   def self.n4
-    Team.find_by(championship: Championship.n4, city: "Voreppe")
+    @n4 ||= Team.find_by(championship: Championship.n4, city: "Voreppe")
   end
 
 end

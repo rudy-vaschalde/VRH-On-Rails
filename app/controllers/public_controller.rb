@@ -1,7 +1,11 @@
 class PublicController < ApplicationController
 
   def index
-    @current_seasons = [Championship.n2.current_season, Championship.n4.current_season]
+    if Championship.n2.nil? || Championship.n4.nil?
+        @current_seasons = [nil, nil]
+    else
+      @current_seasons = [Championship.n2.current_season, Championship.n4.current_season]
+    end
   end
 
   def about

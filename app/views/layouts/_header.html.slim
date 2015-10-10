@@ -11,6 +11,7 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
             ul.nav.navbar-nav
                 li = link_to "Articles", "#"
                 li.dropdown
+                 - unless Team.n2.nil?
                     a.dropdown-toggle href="#" data-toggle="dropdown" National 2
                     ul.dropdown-menu
                         li = link_to "Equipe", Team.n2
