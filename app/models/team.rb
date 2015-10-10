@@ -2,9 +2,12 @@ class Team < ActiveRecord::Base
   has_many :seasons, through: :rank
   has_many :players
   has_many :goals
-
   belongs_to :championship
+
   validates :name, :city, presence: true
+
+  has_attached_file :logo, styles: { medium: "400x400", thumb: "100x100>" }, default_url: "/images/missing.png"
+  validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 
   def all_games
     Game.where('visitor_team_id = ? or home_team_id = ?', self.id, self.id)

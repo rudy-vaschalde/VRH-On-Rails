@@ -5,7 +5,11 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    if params[:team].blank?
+      @games = Game.all
+    else
+      @games = Team.find(params[:team]).all_games
+    end
   end
 
   # GET /games/1

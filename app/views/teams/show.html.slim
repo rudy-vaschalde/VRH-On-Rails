@@ -1,15 +1,17 @@
-p
-  strong Name:
-  = @team.name
-p
-  strong City:
-  = @team.city
-p
-  strong Logo path:
-  = @team.logo_path
+.container-fluid
+  p
+    strong Name:
+    = @team.name
+  p
+    strong City:
+    = @team.city
+  = image_tag @team.logo
 
-- @team.all_games.each do |game|
-  p = game.match_day
+  - @team.players.each do |player|
+    p = player.first_name
+
+  - @team.all_games.each do |game|
+    p = game.match_day
 
 => link_to 'Edit', edit_team_path(@team)
 => link_to 'Back', teams_path

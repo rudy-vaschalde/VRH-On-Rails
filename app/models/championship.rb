@@ -4,7 +4,7 @@ class Championship < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   def current_season
-    self.seasons.order(:created_at).first
+    self.seasons.order(:created_at).last
   end
 
   def self.n2

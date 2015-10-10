@@ -1,8 +1,10 @@
 h1 Listing games
 
-table
+table.table
   thead
     tr
+      th Home
+      th Visitor
       th Match day
       th Overtime
       th
@@ -12,6 +14,8 @@ table
   tbody
     - @games.each do |game|
       tr
+        td = game.home_team.name
+        td = game.visitor_team.name
         td = game.match_day
         td = game.overtime
         td = link_to 'Show', game

@@ -15,7 +15,7 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
                     ul.dropdown-menu
                         li = link_to "Equipe", Team.n2
                         li = link_to "Classement", Team.n2.championship.current_season
-                        li = link_to "Résultats", "#"
+                        li = link_to "Résultats", games_path(team: Team.n2)
                 li.dropdown
                     a.dropdown-toggle href="#" data-toggle="dropdown" National 4
                     ul.dropdown-menu

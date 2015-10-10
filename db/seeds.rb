@@ -24,8 +24,8 @@ Rank.create!(team: Team.second, season: Season.last, win: 0, loss: 7, tie: 0, wi
 Rank.create!(team: Team.third, season: Season.last, win: 8, loss: 0, tie: 0, win_ot: 0, loss_ot: 0)
 Rank.create!(team: Team.fourth, season: Season.last, win: 2, loss: 4, tie: 0, win_ot: 1, loss_ot: 1)
 
-Game.create!(match_day: Time.new(2014,1,1) , home_team: Team.first, visitor_team: Team.second)
-Game.create!(match_day: Time.new(2014,2,1) , home_team: Team.first, visitor_team: Team.third)
+Game.create!(match_day: Time.new(2014,1,1) , home_team: Team.n2, visitor_team: Team.second)
+Game.create!(match_day: Time.new(2014,2,1) , home_team: Team.n2, visitor_team: Team.third)
 
 for i in 1..5 do
   Player.create!(first_name: "Player #{i}", last_name: "Player #{i}", team: Team.n2)
