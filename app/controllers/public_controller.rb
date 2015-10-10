@@ -1,8 +1,7 @@
 class PublicController < ApplicationController
-  skip_before_filter :authenticate_user!
 
   def index
-    @current_seasons = [Season.current_season(Championship.n2), Season.current_season(Championship.n4)]
+    @current_seasons = [Championship.n2.current_season, Championship.n4.current_season]
   end
 
   def about

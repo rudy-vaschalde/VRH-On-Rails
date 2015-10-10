@@ -28,7 +28,8 @@
           p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
 
     #side-content.col-md-3
-      == render @current_seasons, small: true
+      - unless @current_seasons.include? nil
+        == render @current_seasons, small: true
 
 
 

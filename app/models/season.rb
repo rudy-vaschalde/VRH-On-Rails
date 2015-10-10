@@ -9,8 +9,4 @@ class Season < ActiveRecord::Base
   def ordered_ranks
     ranks.sort{ |a,b| a.points <=> b.points }.reverse
   end
-
-  def self.current_season(championship)
-    Season.where(championship: championship).order(:created_at).last
-  end
 end

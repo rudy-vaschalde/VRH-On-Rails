@@ -1,5 +1,6 @@
 class RanksController < ApplicationController
   before_action :set_rank, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /ranks
   # GET /ranks.json

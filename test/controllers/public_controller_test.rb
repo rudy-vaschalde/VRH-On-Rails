@@ -6,6 +6,13 @@ class PublicControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get index even when db is not initialized" do
+    Championship.destroy_all
+    Season.destroy_all
+    get :index
+    assert_response :success
+  end
+
   test "should get about" do
     get :about
     assert_response :success

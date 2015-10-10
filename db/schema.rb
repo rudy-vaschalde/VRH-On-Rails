@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006065935) do
+ActiveRecord::Schema.define(version: 20151010192543) do
 
   create_table "championships", force: :cascade do |t|
     t.string   "name"
@@ -87,9 +87,12 @@ ActiveRecord::Schema.define(version: 20151006065935) do
     t.string   "name"
     t.string   "city"
     t.string   "logo_path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "championship_id"
   end
+
+  add_index "teams", ["championship_id"], name: "index_teams_on_championship_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
