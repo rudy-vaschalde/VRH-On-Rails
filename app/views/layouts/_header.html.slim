@@ -1,0 +1,20 @@
+nav.navbar.navbar-default.navbar-fixed-top#header-navbar
+    button.navbar-toggle type="button" data-toggle="collapse" data-target="#main-navbar"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    .navbar-header
+      a.navbar-brand href="#" = image_tag "logo_Primate.png", class: "brand-logo"
+    #main-navbar.navbar-collapse.collapse style="padding-left: 0px;"
+        ul.nav.navbar-nav
+            li = link_to "Articles", "#"
+            li  = link_to "National 2", "#"
+            li  = link_to "National 4", "#"
+            li  = link_to "Le Club", "#"
+            li  = link_to "Contact", "#"
+            / - if signed_in?
+            /     - if current_user.admin?
+            /         li
+            /     - if current_user.manager?
+            /         li

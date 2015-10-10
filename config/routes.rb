@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  # Temporary root
-  root "seasons#index"
+
+  root "public#index"
+
+  resources :public, only: [:index] do
+    collection do
+      get :about
+      get :nat2
+      get :nat4
+      get :contact
+    end
+  end
 
   resources :games
   resources :players

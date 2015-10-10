@@ -7,6 +7,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
 body
-  .container
+  #page-body.container
+    == render 'layouts/header'
     == render 'layouts/notice'
     == yield
+    == render 'layouts/footer'
