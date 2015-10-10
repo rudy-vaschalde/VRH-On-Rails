@@ -36,12 +36,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 namespace :deploy do
 
-  after :restart, :clear_cache do
+  after :restart, :init_championships do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+         execute :rake, 'init:championships'
+      end
     end
   end
 
