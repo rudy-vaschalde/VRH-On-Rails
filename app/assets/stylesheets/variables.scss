@@ -1,1 +1,31 @@
 // SCSS variables used in all the SCSS files
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: font-url('SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: font-url('SourceSansPro-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  src: font-url('SourceSansPro-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Semibold';
+  src: font-url('SourceSansPro-Semibold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//colors
+$vrh-blue: #008FD1;
+$vrh-grey: #BCBDC0;
