@@ -4,7 +4,6 @@ barry:
   surname: The Flash
   height: 1
   weight: 1
-  photo: MyString
   team: one
 
 hal_jordan:
@@ -13,7 +12,6 @@ hal_jordan:
   surname: Green Lantern
   height: 1
   weight: 1
-  photo: MyString
   team: one
 
 diana:
@@ -22,5 +20,4 @@ diana:
   surname: Wonderwoman
   height: 1
   weight: 1
-  photo: MyString
   team: two
