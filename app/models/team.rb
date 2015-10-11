@@ -6,10 +6,10 @@ class Team < ActiveRecord::Base
 
   validates :name, :city, presence: true
 
-  has_attached_file :logo, styles: { medium: "400x400", thumb: "50x50>" }, default_url: "/images/missing.png"
+  has_attached_file :logo, styles: { medium: "400x400", thumb: "50x50>" }, default_url: "/img/missing.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :team_photo, styles: { large: "2048x1365", medium: "512x341>" }, default_url: "/images/missing_team.png"
+  has_attached_file :team_photo, styles: { large: "2048x1365", medium: "512x341>" }, default_url: "/img/missing_team_:style.png"
   validates_attachment_content_type :team_photo, content_type: /\Aimage\/.*\Z/
 
   def all_games

@@ -8,14 +8,13 @@
         => @team.city
       = image_tag @team.team_photo.url(:medium)
 
-  .container
-    h3 Joueurs
-    .row
-      - @team.players.each_with_index do |player, index|
-        - if index % 6 == 0
-          .row
-        .col-md-2.player-portrait
-          == render player
+  h3 Joueurs
+  .row
+    - @team.players.each_with_index do |player, index|
+      - if index % 4 == 0
+        .row
+      .col-md-3.player-portrait
+        == render player
   .container
     h3 Résultats
     - @team.all_games.each do |game|
