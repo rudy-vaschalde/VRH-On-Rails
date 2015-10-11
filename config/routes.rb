@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :articles
   root "public#index"
 
   resources :public, only: [:index] do

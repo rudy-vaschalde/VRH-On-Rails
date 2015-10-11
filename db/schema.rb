@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011172851) do
+ActiveRecord::Schema.define(version: 20151011204025) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "article_image_file_name"
+    t.string   "article_image_content_type"
+    t.integer  "article_image_file_size"
+    t.datetime "article_image_updated_at"
+  end
+
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "championships", force: :cascade do |t|
     t.string   "name"
