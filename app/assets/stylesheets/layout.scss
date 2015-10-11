@@ -11,19 +11,19 @@
     width: 45px;
   }
 
-  .nav.navbar-nav{
+  // .nav.navbar-nav{
 
-    li a:hover{
-      background: $vrh-blue;
-      color: #eee;
-    }
-  }
+  //   li a:hover{
+  //     background: $vrh-blue;
+  //     color: #eee;
+  //   }
+  // }
 
 }
 
 #partner-footer{
   background: $concrete;
-  padding: 5px 0 0 0;
+  margin: 10px 0 0 0;
   width: 100%;
   height: 100px;
   color: $midnight-blue;
@@ -32,13 +32,13 @@
     margin: 0;
 
   }
-  
+
 }
 
 #footer{
   background: $midnight-blue;
   width: 100%;
-
+  padding: 5px 0;
   p{
     text-align: center;
     color: $concrete;
