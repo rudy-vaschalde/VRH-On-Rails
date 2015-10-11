@@ -6,6 +6,7 @@
       h2.media-heading
         => @team.name
         => @team.city
+      = image_tag @team.team_photo.url(:medium)
 
   .container
     h3 Joueurs
@@ -19,6 +20,6 @@
     h3 Résultats
     - @team.all_games.each do |game|
       == render game
-
-=> link_to 'Edit', edit_team_path(@team)
-=> link_to 'Back', teams_path
+- if user_signed_in?
+  => link_to 'Edit', edit_team_path(@team), class: 'btn btn-warning'
+  => link_to 'Back', teams_path, class: 'btn btn-primary'

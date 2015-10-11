@@ -20,5 +20,5 @@ table
         td = link_to 'Destroy', team, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
-
-= link_to 'New Team', new_team_path
+- if user_signed_in?
+  = link_to 'New Team', new_team_path, class: 'btn btn-primary'

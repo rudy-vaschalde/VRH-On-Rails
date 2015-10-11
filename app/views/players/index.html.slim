@@ -27,5 +27,5 @@ table
         td = link_to 'Destroy', player, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
-
-= link_to 'New Player', new_player_path
+- if user_signed_in?
+  = link_to 'New Player', new_player_path, class: 'btn btn-primary'

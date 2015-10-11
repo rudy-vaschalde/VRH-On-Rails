@@ -4,6 +4,7 @@
     = @championship.name
   .row
     == render @championship.seasons, small: false
+- if user_signed_in?
+  => link_to 'Edit', edit_championship_path(@championship), class: 'btn btn-warning'
+  => link_to 'Back', championships_path, class: 'btn btn-primary'
 
-=> link_to 'Edit', edit_championship_path(@championship)
-=> link_to 'Back', championships_path

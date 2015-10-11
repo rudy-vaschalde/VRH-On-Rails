@@ -1,4 +1,14 @@
-p
-  => game.match_day
-  => game.home_team.name
-  => game.visitor_team.name
+.row
+  .col-md-2
+    = game.match_day.to_formatted_s(:short)
+  .col-md-1
+    = image_tag game.home_team.logo.url(:thumb)
+  .col-md-2
+    => game.home_team.name
+    => game.home_team.city
+  .col-md-2 VS
+  .col-md-1
+    = image_tag game.visitor_team.logo.url(:thumb)
+  .col-md-2
+    => game.visitor_team.name
+    => game.visitor_team.city

@@ -25,5 +25,5 @@ table
         td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
-
-= link_to 'New Rank', new_rank_path
+- if user_signed_in?
+  = link_to 'New Rank', new_rank_path, class: 'btn btn-primary'

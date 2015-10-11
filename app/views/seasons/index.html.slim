@@ -17,5 +17,5 @@ table.table
         td = link_to 'Destroy', season, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
 br
-
-= link_to 'New Season', new_season_path, class: 'btn btn-primary'
+- if user_signed_in?
+  = link_to 'New Season', new_season_path, class: 'btn btn-primary'

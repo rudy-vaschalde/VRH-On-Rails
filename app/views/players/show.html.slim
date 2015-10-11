@@ -1,21 +1,22 @@
-p
-  strong first_name:
-  = @player.first_name
-p
-  strong Lastname:
-  = @player.last_name
-p
-  strong Surname:
-  = @player.surname
-p
-  strong Height:
-  = @player.height
-p
-  strong Weight:
-  = @player.weight
-p
-  strong Team:
-  = @player.team
+.container-fluid
+  .media
+    .media-left.media-middle
+      = image_tag @player.photo.url(:medium)
+    .media-body
+      p
+        => @player.first_name
+        => @player.last_name
+        => image_tag @player.team.logo.url(:thumb)
+      p
+        strong Surname:
+        = @player.surname
+      p
+        strong Height:
+        = @player.height
+      p
+        strong Weight:
+        = @player.weight
 
-=> link_to 'Edit', edit_player_path(@player)
-=> link_to 'Back', players_path
+  - if user_signed_in?
+    => link_to 'Edit', edit_player_path(@player), class: 'btn btn-warning'
+    => link_to 'Back', players_path, class: 'btn btn-primary'

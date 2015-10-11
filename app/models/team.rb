@@ -10,7 +10,7 @@ class Team < ActiveRecord::Base
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 
   has_attached_file :team_photo, styles: { large: "2048x1365", medium: "512x341>" }, default_url: "/images/missing_team.png"
-  validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :team_photo, content_type: /\Aimage\/.*\Z/
 
   def all_games
     Game.where('visitor_team_id = ? or home_team_id = ?', self.id, self.id)
