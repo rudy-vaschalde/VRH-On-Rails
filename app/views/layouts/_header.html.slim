@@ -6,25 +6,26 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
         span.icon-bar
     .container-fluid
         .navbar-header
-          a.navbar-brand href="#" = image_tag "logo_Primate.png", class: "brand-logo"
+          a.navbar-brand href="#{root_path}" = image_tag "logo_Primate.png", class: "brand-logo"
         #main-navbar.navbar-collapse.collapse style="padding-left: 0px;"
             ul.nav.navbar-nav
                 li = link_to "Articles", "#"
-                li.dropdown
-                 - unless Team.n2.nil?
-                    a.dropdown-toggle href="#" data-toggle="dropdown" National 2
-                    ul.dropdown-menu
-                        li = link_to "Equipe", Team.n2
-                        li = link_to "Classement", Team.n2.championship.current_season
-                        li = link_to "Résultats", games_path(team: Team.n2)
-                li.dropdown
-                    a.dropdown-toggle href="#" data-toggle="dropdown" National 4
-                    ul.dropdown-menu
-                        li = link_to "Equipe", "#"
-                        li = link_to "Classement", "#"
-                        li = link_to "Résultats", "#"
+                - unless Team.n2.nil?
+                    li.dropdown
+                        a.dropdown-toggle href="#" data-toggle="dropdown" National 2
+                        ul.dropdown-menu
+                            li = link_to "Equipe", Team.n2
+                            li = link_to "Classement", Team.n2.championship.current_season
+                            li = link_to "Résultats", games_path(team: Team.n2)
+                - unless Team.n4.nil?
+                    li.dropdown
+                        a.dropdown-toggle href="#" data-toggle="dropdown" National 4
+                        ul.dropdown-menu
+                            li = link_to "Equipe", "#"
+                            li = link_to "Classement", "#"
+                            li = link_to "Résultats", "#"
                 li = link_to "Le Club", "#"
-                li = link_to "Contact", "#"
+                li = link_to "Contact", contact_public_index_path
                 / - if signed_in?
                 /     - if current_user.admin?
                 /         li
