@@ -6,10 +6,12 @@
         - @player.errors.full_messages.each do |message|
           li = message
 
-    = f.text_field :first_name
-    = f.text_field :last_name
-    = f.text_field :surname
-    = f.number_field :height
-    = f.number_field :weight
-    = f.select "team_id", options_from_collection_for_select(Team.all, 'id', 'name', @player.team_id)
-    = f.submit
+  = f.select "team_id", options_from_collection_for_select(Team.all, 'id', 'name', @player.team_id)
+  = f.text_field :first_name
+  = f.text_field :last_name
+  = f.text_field :surname
+  = f.number_field :height
+  = f.number_field :weight
+  = f.file_field :photo
+
+  = f.submit

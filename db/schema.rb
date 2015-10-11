@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011160442) do
+ActiveRecord::Schema.define(version: 20151011172851) do
 
   create_table "championships", force: :cascade do |t|
     t.string   "name"
@@ -89,13 +89,17 @@ ActiveRecord::Schema.define(version: 20151011160442) do
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "city"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "championship_id"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "team_photo_file_name"
+    t.string   "team_photo_content_type"
+    t.integer  "team_photo_file_size"
+    t.datetime "team_photo_updated_at"
   end
 
   add_index "teams", ["championship_id"], name: "index_teams_on_championship_id"

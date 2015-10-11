@@ -1,24 +1,24 @@
 .container-fluid
-  .row
-    .col-md-2
+  .media
+    .media-left
       = image_tag @team.logo.url(:medium)
-    .col-md-4
-      h2
+    .media-body
+      h2.media-heading
         => @team.name
         => @team.city
 
-  .row
-    .col-md-6
-      h3 Joueurs
-      - @team.players.each do |player|
-        p
-          => player.first_name
-          => player.last_name
-        / == render player
-    .col-md-6
-      h3 Résultats
-      - @team.all_games.each do |game|
-        p = game.match_day
+  .container
+    h3 Joueurs
+    .row
+      - @team.players.each_with_index do |player, index|
+        - if index % 6 == 0
+          .row
+        .col-md-2.player-portrait
+          == render player
+  .container
+    h3 Résultats
+    - @team.all_games.each do |game|
+      == render game
 
 => link_to 'Edit', edit_team_path(@team)
 => link_to 'Back', teams_path
