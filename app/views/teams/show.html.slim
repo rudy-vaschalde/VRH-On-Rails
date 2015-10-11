@@ -1,4 +1,4 @@
-.container-fluid
+.container-fluid.content
   .media
     .media-left
       = image_tag @team.logo.url(:medium), :class => "team-logo"
@@ -15,10 +15,10 @@
         .row
       .col-md-3.player-portrait
         == render player
-  .container
-    h3 Résultats
-    - @team.all_games.each do |game|
-      == render game
+  / .container
+  /   h3 Résultats
+  /   - @team.all_games.each do |game|
+  /     == render game
 - if user_signed_in?
   => link_to 'Edit', edit_team_path(@team), class: 'btn btn-warning'
   => link_to 'Back', teams_path, class: 'btn btn-primary'

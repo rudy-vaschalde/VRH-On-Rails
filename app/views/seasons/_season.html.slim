@@ -1,7 +1,7 @@
 h3
   => season.championship.name
   small => season.name
-table.table.table-striped
+table.table.table-striped.table-bordered
   thead
     tr
       th P
@@ -18,7 +18,10 @@ table.table.table-striped
     - season.ordered_ranks.each_with_index do |rank, index|
       tr
         td = index+1
-        td = rank.team.name
+        td
+          => image_tag rank.team.logo.url(:thumb)
+          => rank.team.name
+          => rank.team.city
         - unless small
           td = rank.game_count
           td = rank.win

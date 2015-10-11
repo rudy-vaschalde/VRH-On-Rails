@@ -38,12 +38,27 @@
   }
 }
 
+#side-content{
+  table{
+    img{
+      width: 30px;
+    }
+  }
+}
+
 
 .content{
   padding: 10px 20px;
 
   .article{
-    height: 200px;
+    text-align: center;
+
+    h3{
+      margin: 0;
+    }
+    p{
+      text-align: justify;
+    }
   }
 
 }

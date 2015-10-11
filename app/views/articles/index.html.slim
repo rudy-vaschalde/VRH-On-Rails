@@ -1,25 +1,11 @@
 .container-fluid
-  h1 Listing articles
+  h1 Tous les articles
 
-  table.table
-    thead
-      tr
-        th Title
-        th Content
-        th User
-        th
-        th
-        th
-
-    tbody
-      - @articles.each do |article|
-        tr
-          td = article.title
-          td = article.content
-          td = article.user
-          td = link_to 'Show', article
-          td = link_to 'Edit', edit_article_path(article)
-          td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+  - @articles.each_with_index do |article, index|
+    - if index % 4 == 0
+      .row
+    .col-md-3.article
+      == render article
 
 - if user_signed_in?
 = link_to 'New Article', new_article_path, class: 'btn btn-primary'

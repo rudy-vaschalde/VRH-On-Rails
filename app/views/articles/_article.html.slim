@@ -1,0 +1,7 @@
+= image_tag article.article_image.url(:thumb), class: "article-thumb"
+h3
+  => article.title
+  br
+  small => article.created_at.to_formatted_s(:short)
+  small => article.user.email
+p = article.content

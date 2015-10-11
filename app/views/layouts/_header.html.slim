@@ -9,7 +9,7 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
           a.navbar-brand href="#{root_path}" = image_tag "logo_Primate.png", class: "brand-logo"
         #main-navbar.navbar-collapse.collapse style="padding-left: 0px;"
             ul.nav.navbar-nav
-                li = link_to "Articles", "#"
+                li = link_to "Articles", articles_path
                 - unless Team.n2.nil?
                     li.dropdown
                         a.dropdown-toggle href="#" data-toggle="dropdown" National 2
