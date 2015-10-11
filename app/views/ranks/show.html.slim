@@ -1,18 +1,19 @@
-p
-  strong Win:
-  = @rank.win
-p
-  strong loss:
-  = @rank.loss
-p
-  strong tie:
-  = @rank.tie
-p
-  strong win_ot:
-  = @rank.win_ot
-p
-  strong loss_ot:
-  = @rank.loss_ot
+.container-fluid
+  p
+    strong Win:
+    = @rank.win
+  p
+    strong loss:
+    = @rank.loss
+  p
+    strong tie:
+    = @rank.tie
+  p
+    strong win_ot:
+    = @rank.win_ot
+  p
+    strong loss_ot:
+    = @rank.loss_ot
 
 => link_to 'Edit', edit_rank_path(@rank)
 => link_to 'Back', ranks_path

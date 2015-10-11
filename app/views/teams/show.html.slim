@@ -1,7 +1,7 @@
 .container-fluid
   .media
     .media-left
-      = image_tag @team.logo.url(:medium)
+      = image_tag @team.logo.url(:medium), :class => "team-logo"
     .media-body
       h2.media-heading
         => @team.name
