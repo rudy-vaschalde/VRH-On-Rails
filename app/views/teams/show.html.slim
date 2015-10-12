@@ -1,7 +1,7 @@
 .container-fluid.content
   .media
     .media-left
-      = image_tag @team.logo.url(:medium), :class => "team-logo"
+      = image_tag @team.logo.url(:medium), class: "team-logo"
     .media-body
       h2.media-heading
         => @team.name
@@ -10,9 +10,7 @@
 
   h3 Joueurs
   .row
-    - @team.players.each_with_index do |player, index|
-      - if index % 4 == 0
-        .row
+    - @team.players.each do |player|
       .col-md-3.player-portrait
         == render player
   / .container
