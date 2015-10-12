@@ -26,14 +26,19 @@
 
 
   .next-game{
-    background: $vrh-blue;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) );
     float: right;
     padding: 10px;
-    text-align: center;
+    text-align: right;
+    color: white;
 
     h3{
-      margin: 0;
-      color: white;
+      margin: 0 0 5px 0;
+    }
+
+    p{
+      font-size: 130%;
+      margin-bottom: 2px;
     }
   }
 }

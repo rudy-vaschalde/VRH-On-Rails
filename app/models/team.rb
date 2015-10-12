@@ -6,7 +6,7 @@ class Team < ActiveRecord::Base
 
   validates :name, :city, presence: true
 
-  has_attached_file :logo, styles: { medium: "400x400", thumb: "50x50>" }, default_url: "/img/missing.png"
+  has_attached_file :logo, styles: { medium: "400x400", thumb: "50x50>" }, default_url: "/img/missing_logo_:style.png"
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 
   has_attached_file :team_photo, styles: { large: "2048x1365", medium: "512x341>" }, default_url: "/img/missing_team_:style.png"

@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20151011204025) do
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
+  create_table "assists", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.integer  "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "assists", ["goal_id"], name: "index_assists_on_goal_id"
+  add_index "assists", ["player_id"], name: "index_assists_on_player_id"
+
   create_table "championships", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

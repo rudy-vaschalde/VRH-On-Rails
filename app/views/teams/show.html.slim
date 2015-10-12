@@ -8,7 +8,7 @@
         => @team.city
       = image_tag @team.team_photo.url(:medium)
 
-  h3 Joueurs
+  h3.headline Joueurs
   .row
     - @team.players.each do |player|
       .col-md-3.player-portrait
