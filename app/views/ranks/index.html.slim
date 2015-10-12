@@ -1,29 +1,30 @@
-h1 Listing ranks
+.container-fluid.content
+  h1 Listing ranks
 
-table
-  thead
-    tr
-      th Win
-      th loss
-      th tie
-      th win_ot
-      th loss_ot
-      th
-      th
-      th
-
-  tbody
-    - @ranks.each do |rank|
+  table
+    thead
       tr
-        td = rank.win
-        td = rank.loss
-        td = rank.tie
-        td = rank.win_ot
-        td = rank.loss_ot
-        td = link_to 'Show', rank
-        td = link_to 'Edit', edit_rank_path(rank)
-        td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th Win
+        th loss
+        th tie
+        th win_ot
+        th loss_ot
+        th
+        th
+        th
 
-br
-- if user_signed_in?
-  = link_to 'New Rank', new_rank_path, class: 'btn btn-primary'
+    tbody
+      - @ranks.each do |rank|
+        tr
+          td = rank.win
+          td = rank.loss
+          td = rank.tie
+          td = rank.win_ot
+          td = rank.loss_ot
+          td = link_to 'Show', rank
+          td = link_to 'Edit', edit_rank_path(rank)
+          td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+  br
+  - if user_signed_in?
+    = link_to 'New Rank', new_rank_path, class: 'btn btn-primary'

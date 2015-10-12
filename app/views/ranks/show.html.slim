@@ -1,4 +1,4 @@
-.container-fluid
+.container-fluid.content
   p
     strong Win:
     = @rank.win
@@ -15,6 +15,6 @@
     strong loss_ot:
     = @rank.loss_ot
 
-- if user_signed_in?
-  => link_to 'Edit', edit_rank_path(@rank), class: 'btn btn-warning'
-  => link_to 'Back', ranks_path, class: 'btn btn-primary'
+  - if user_signed_in?
+    => link_to 'Edit', edit_rank_path(@rank), class: 'btn btn-warning'
+    => link_to 'Back', ranks_path, class: 'btn btn-primary'

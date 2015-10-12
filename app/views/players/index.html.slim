@@ -1,31 +1,32 @@
-h1 Listing players
+.container-fluid.content
+  h1 Listing players
 
-table
-  thead
-    tr
-      th first_name
-      th Lastname
-      th Surname
-      th Height
-      th Weight
-      th Team
-      th
-      th
-      th
-
-  tbody
-    - @players.each do |player|
+  table
+    thead
       tr
-        td = player.first_name
-        td = player.last_name
-        td = player.surname
-        td = player.height
-        td = player.weight
-        td = player.team
-        td = link_to 'Show', player
-        td = link_to 'Edit', edit_player_path(player)
-        td = link_to 'Destroy', player, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th first_name
+        th Lastname
+        th Surname
+        th Height
+        th Weight
+        th Team
+        th
+        th
+        th
 
-br
-- if user_signed_in?
-  = link_to 'New Player', new_player_path, class: 'btn btn-primary'
+    tbody
+      - @players.each do |player|
+        tr
+          td = player.first_name
+          td = player.last_name
+          td = player.surname
+          td = player.height
+          td = player.weight
+          td = player.team
+          td = link_to 'Show', player
+          td = link_to 'Edit', edit_player_path(player)
+          td = link_to 'Destroy', player, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+  br
+  - if user_signed_in?
+    = link_to 'New Player', new_player_path, class: 'btn btn-primary'

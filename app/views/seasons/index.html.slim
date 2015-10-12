@@ -1,21 +1,22 @@
-h1 Listing seasons
+.container-fluid.content
+  h1 Listing seasons
 
-table.table
-  thead
-    tr
-      th Name
-      th
-      th
-      th
-
-  tbody
-    - @seasons.each do |season|
+  table.table
+    thead
       tr
-        td = season.name
-        td = link_to 'Show', season, class: 'btn btn-default'
-        td = link_to 'Edit', edit_season_path(season), class: 'btn btn-warning'
-        td = link_to 'Destroy', season, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+        th Name
+        th
+        th
+        th
 
-br
-- if user_signed_in?
-  = link_to 'New Season', new_season_path, class: 'btn btn-primary'
+    tbody
+      - @seasons.each do |season|
+        tr
+          td = season.name
+          td = link_to 'Show', season, class: 'btn btn-default'
+          td = link_to 'Edit', edit_season_path(season), class: 'btn btn-warning'
+          td = link_to 'Destroy', season, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+
+  br
+  - if user_signed_in?
+    = link_to 'New Season', new_season_path, class: 'btn btn-primary'
