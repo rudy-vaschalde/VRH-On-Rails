@@ -1,7 +1,14 @@
-= image_tag article.article_image.url(:thumb), class: "article-thumb"
-h3
-  => article.title
-  br
-  small => article.created_at.to_formatted_s(:short)
-  small => article.user.email
-p = article.content
+ article.news
+  figure
+    .link-overlay
+      .image-holder
+        = image_tag article.article_image.url(:thumb), class: "article-thumb"
+      = link_to "Voir plus", article, class: "btn btn-primary"
+    figcaption
+      h3
+        => article.title
+        br
+        small
+          span.glyphicon.glyphicon-calendar
+          => article.created_at.to_formatted_s(:short)
+  p = article.content
