@@ -3,19 +3,19 @@
     .media-left.media-middle
       = image_tag @player.photo.url(:medium)
     .media-body
-      p
+      h2
         => @player.first_name
         => @player.last_name
         => image_tag @player.team.logo.url(:thumb)
-      p
-        strong Surname:
-        = @player.surname
-      p
-        strong Height:
-        = @player.height
-      p
-        strong Weight:
-        = @player.weight
+      h3.headline
+        strong Surnom:
+        => @player.surname
+      h3.headline
+        strong taille:
+        => @player.height
+      h3.headline
+        strong poids:
+        => @player.weight
 
   - if user_signed_in?
     => link_to 'Edit', edit_player_path(@player), class: 'btn btn-warning'

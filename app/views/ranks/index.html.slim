@@ -1,9 +1,10 @@
 .container-fluid.content
   h1 Listing ranks
 
-  table
+  table.table
     thead
       tr
+        th Equipe
         th Win
         th loss
         th tie
@@ -16,14 +17,15 @@
     tbody
       - @ranks.each do |rank|
         tr
+          td = rank.team.name
           td = rank.win
           td = rank.loss
           td = rank.tie
           td = rank.win_ot
           td = rank.loss_ot
-          td = link_to 'Show', rank
-          td = link_to 'Edit', edit_rank_path(rank)
-          td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td = link_to 'Show', rank, class: 'btn btn-default'
+          td = link_to 'Edit', edit_rank_path(rank), class: 'btn btn-warning'
+          td = link_to 'Destroy', rank, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
   br
   - if user_signed_in?

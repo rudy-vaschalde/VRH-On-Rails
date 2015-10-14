@@ -1,7 +1,7 @@
 .container-fluid.content
   h1 Listing players
 
-  table
+  table.table
     thead
       tr
         th first_name
@@ -22,10 +22,12 @@
           td = player.surname
           td = player.height
           td = player.weight
-          td = player.team
-          td = link_to 'Show', player
-          td = link_to 'Edit', edit_player_path(player)
-          td = link_to 'Destroy', player, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td
+            => player.team.name
+            => player.team.city
+          td = link_to 'Show', player, class: 'btn btn-default'
+          td = link_to 'Edit', edit_player_path(player), class: 'btn btn-warning'
+          td = link_to 'Destroy', player, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
   br
   - if user_signed_in?
