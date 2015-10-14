@@ -1,14 +1,15 @@
-.row
-  .col-md-2
-    = game.match_day.to_formatted_s(:short)
-  .col-md-1
-    = image_tag game.home_team.logo.url(:thumb)
-  .col-md-2
-    => game.home_team.name
-    => game.home_team.city
-  .col-md-2 VS
-  .col-md-1
-    = image_tag game.visitor_team.logo.url(:thumb)
-  .col-md-2
-    => game.visitor_team.name
-    => game.visitor_team.city
+td
+  = game.match_day.to_formatted_s(:short)
+td
+  => image_tag game.home_team.logo.url(:thumb)
+  => game.home_team.name
+  => game.home_team.city
+td VS
+td
+  => image_tag game.visitor_team.logo.url(:thumb)
+  => game.visitor_team.name
+  => game.visitor_team.city
+- if user_signed_in?
+  td
+    => link_to 'Edit', edit_game_path(game), class: 'btn btn-warning btn-sm'
+    => link_to 'Destroy', game, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger btn-sm'
