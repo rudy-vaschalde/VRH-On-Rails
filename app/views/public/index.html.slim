@@ -6,7 +6,7 @@
 
     #next-game-N2.next-game
       h3.headline Prochain Match N2
-      p 18/10/2015
+      p 18/10/2015 à 15h
       p Voreppe vs Valence
 
 .container-fluid.content
@@ -14,46 +14,14 @@
     #article-container.col-md-9
       h3.headline Dernières news
       .row
-        - @articles.each do |article|
+        - @articles.each_with_index do |article, index|
           .col-md-6
             == render article
-      / .row
-      /   .article.col-md-6
-      /     h3 Article
-      /     p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
-      /   .article.col-md-6
-      /     h3 Article
-      /     p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
-      / .row
-      /   .article.col-md-6
-      /     h3 Article
-      /     p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
-      /   .article.col-md-6
-      /     h3 Article
-      /     p May after us thing isn't wherein you'll bearing it subdue fowl one likeness let i. You'll creeping void the his place itself male bring. Creeping day moving fruitful man rule.
 
     #side-content.col-md-3
       - unless @current_seasons.include? nil
         == render @current_seasons, small: true
 
 
-
-      / h3 Classement N2
-      / table.table
-      /   tr
-      /     th equipe
-      /     th pts
-      /   tr
-      /     td Voreppe
-      /     td 12
-      /   tr
-      /     td Grenoble
-      /     td 10
-      /   tr
-      /     td Besancon
-      /     td 10
-      /   tr
-      /     td Valence
-      /     td 8
 
 

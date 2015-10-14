@@ -3,7 +3,7 @@
     .link-overlay
       .image-holder
         = image_tag article.article_image.url(:thumb), class: "article-thumb"
-      = link_to "Voir plus", article, class: "btn btn-primary"
+      = link_to "Voir plus", article, class: "btn btn-primary btn-lg"
     figcaption
       h3
         => article.title
@@ -11,4 +11,6 @@
         small
           span.glyphicon.glyphicon-calendar
           => article.created_at.to_formatted_s(:short)
-  p = article.content
+  p
+    = article.content.truncate(200)
+    = link_to "Voir plus", article, class: "btn btn-primary btn-xs"
