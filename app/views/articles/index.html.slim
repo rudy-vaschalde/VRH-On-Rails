@@ -6,7 +6,7 @@
       == render article
       - if user_signed_in?
         => link_to 'Edit', edit_article_path(article), class: 'btn btn-warning'
-        => link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+        => link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
 
   - if user_signed_in?
     = link_to 'New Article', new_article_path, class: 'btn btn-primary btn-lg'

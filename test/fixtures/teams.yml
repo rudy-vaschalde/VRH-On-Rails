@@ -1,7 +1,19 @@
 one:
-  name: MyString
-  city: MyString
+  name: Voreppe N2
+  city: Voreppe
+  championship: one
 
 two:
-  name: MyString
-  city: MyString
+  name: Voreppe N4
+  city: Voreppe
+  championship: two
+
+three:
+  name: Gotham
+  city: Gotham
+  championship: one
+
+four:
+  name: Metropolis
+  city: Metropolis
+  championship: one

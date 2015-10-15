@@ -12,6 +12,8 @@ class Team < ActiveRecord::Base
   has_attached_file :team_photo, styles: { large: "2048x1365<", medium: "512x341>" }, default_url: "/img/missing_team_:style.png"
   validates_attachment_content_type :team_photo, content_type: /\Aimage\/.*\Z/
 
+  scope :vrh, -> { where(city: "Voreppe") }
+
   def all_games
     Game.where('visitor_team_id = ? or home_team_id = ?', self.id, self.id)
   end

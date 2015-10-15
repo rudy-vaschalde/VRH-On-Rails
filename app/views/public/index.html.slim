@@ -3,20 +3,15 @@
     #header-text
       h1.brand Les Primates
       h2.lead Voreppe Roller Hockey
-
-    #next-game-N2.next-game
-      h3.headline Prochain Match N2
-      p 18/10/2015 à 15h
-      p Voreppe vs Valence
+    #next-game-N2.next-game == render "public/next_game"
 
 .container-fluid.content
   .row
     #article-container.col-md-9
       h3.headline Dernières news
       .row
-        - @articles.each_with_index do |article, index|
-          .col-md-6
-            == render article
+        - @articles.each do |article|
+          .col-md-6 == render article
 
     #side-content.col-md-3
       - unless @current_seasons.include? nil

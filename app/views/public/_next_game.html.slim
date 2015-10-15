@@ -1,0 +1,6 @@
+h3.headline Prochain Match N2
+- if @next_match
+  p = format_date @next_match.match_day
+  p #{@next_match.home_team.city} vs #{@next_match.visitor_team.city}
+- else
+  p.text-muted Aucun match n'est programmé.
