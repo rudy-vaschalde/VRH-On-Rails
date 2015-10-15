@@ -51,7 +51,7 @@ class GameTest < ActiveSupport::TestCase
 
   test "next game returns the next game" do
     # Create a VRH N2 match
-    @game =  Game.create!(visitor_team: teams(:one), home_team: teams(:three), match_day: 1.minute.from_now)
+    @game =  Game.create!(visitor_team: teams(:one), home_team: teams(:three), match_day: 1.day.from_now)
     assert_equal @game, Game.next_n2
   end
 
