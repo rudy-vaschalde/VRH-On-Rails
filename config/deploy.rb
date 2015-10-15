@@ -36,18 +36,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 namespace :deploy do
 
-  desc "init database"
-  task :init_db do
-    on primary :db do
-      within current_path do
-        with rails_env: fetch(:stage) do
-          execute :rake, 'init:championships'
-          execute :rake, 'init:teams'
-        end
-      end
-    end
-  end
-
   # desc "init database"
   # after :restart, :init_db do
   #   on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -59,4 +47,10 @@ namespace :deploy do
   #   end
   # end
 
+end
+
+require 'cape'
+
+Cape do
+  mirror_rake_tasks :init
 end
