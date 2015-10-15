@@ -9,7 +9,7 @@
         => article.title
         br
         small
-          span.glyphicon.glyphicon-calendar
+          i.glyphicon.glyphicon-calendar
           => article.created_at.to_formatted_s(:short)
   p
     = article.content.truncate(200)
