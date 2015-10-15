@@ -36,12 +36,14 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 namespace :deploy do
 
-  after :restart, :init_championships do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      within release_path do
-         execute :rake, 'init:championships'
-         execute :rake, 'init:teams'
+  after :restart, :seed do
+    puts "\n=== Init Database ===\n"
+    on primary :db do
+      within current_path do
+        with rails_env: fetch(:stage) do
+          execute :rake, 'init:championships'
+          execute :rake, 'init:teams'
+        end
       end
     end
   end
