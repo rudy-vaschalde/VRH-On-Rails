@@ -13,7 +13,7 @@ gem "capistrano-rails", :group => :development
 gem "capistrano3-puma"
 gem "paperclip", "~> 4.3"
 
-gem 'cape', '~> 1'
+# gem 'cape', '~> 1'
 
 
 gem 'sass-rails', '~> 5.0'
