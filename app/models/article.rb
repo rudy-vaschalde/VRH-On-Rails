@@ -7,4 +7,6 @@ class Article < ActiveRecord::Base
   validates :content, presence: true
   validates :title, presence: true
 
+  scope :featured, -> { order(created_at: :desc).first(4) }
+
 end
