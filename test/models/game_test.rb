@@ -44,4 +44,21 @@ class GameTest < ActiveSupport::TestCase
     assert @barry, Goal.last.scorer
     assert @diana, Goal.last.passer
   end
+
+  test "vrh scope returns Vorreppe games" do
+      assert_equal 2, Game.vrh.count
+  end
+
+  test "next game returns the next game" do
+    # Create a VRH N2 match
+    @game =  Game.create!(visitor_team: teams(:one), home_team: teams(:three), match_day: 1.minute.from_now)
+    assert_equal @game, Game.next_n2
+  end
+
+  test "next game only takes VRH teams into account" do
+    # Create a match with no VRH team
+    @game =  Game.create!(visitor_team: teams(:two), home_team: teams(:four), match_day: 1.minute.from_now)
+    assert_not_equal @game, Game.next_n2
+    assert Game.next_n2.visitor_team == Team.n2 || Game.next_n2.home_team == Team.n2
+  end
 end

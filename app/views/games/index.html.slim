@@ -1,16 +1,18 @@
 .container-fluid.content
   h2 Calendrier
-  .row
-    .col-md-2
-      h3 Date
-    .col-md-3
-      h3 Locaux
-    .col-md-2
-    .col-md-3
-      h3 Visiteurs
-  .row
-    - @games.each do |game|
-      == render game
+  table.table
+    thead
+      tr
+        th Date
+        th Locaux
+        th
+        th Visiteurs
+        - if user_signed_in?
+          th Actions
+    tbody
+      - @games.each do |game|
+        tr
+          == render game
 
-- if user_signed_in?
-  = link_to 'New Game', new_game_path, class: 'btn btn-primary'
+  - if user_signed_in?
+    = link_to 'New Game', new_game_path, class: 'btn btn-primary'

@@ -6,7 +6,8 @@ class PublicController < ApplicationController
     else
       @current_seasons = [Championship.n2.current_season, Championship.n4.current_season]
     end
-    @articles = Article.all.first(4)
+    @articles = Article.featured
+    @next_match = Game.next_n2
   end
 
   def about

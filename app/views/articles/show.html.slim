@@ -1,12 +1,19 @@
 .container-fluid.content
   = image_tag @article.article_image.url(:original)
+  h2
+    = @article.title
+    br
+    small
+      span.glyphicon.glyphicon-calendar
+      => @article.created_at.to_formatted_s(:short)
+  p
+  = image_tag @article.article_image.url(:original)
   h2 @article.title
     br
     small
       span.glyphicon.glyphicon-calendar
       => article.created_at.to_formatted_s(:short)
   p
-    strong Content:
     = @article.content
 
   - if user_signed_in?

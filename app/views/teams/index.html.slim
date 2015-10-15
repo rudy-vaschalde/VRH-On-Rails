@@ -1,7 +1,7 @@
 .container-fluid.content
   h1 Listing teams
 
-  table
+  table.table
     thead
       tr
         th Name
@@ -16,9 +16,9 @@
         tr
           td = team.name
           td = team.city
-          td = link_to 'Show', team
-          td = link_to 'Edit', edit_team_path(team)
-          td = link_to 'Destroy', team, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td = link_to 'Show', team, class: 'btn btn-default'
+          td = link_to 'Edit', edit_team_path(team), class: 'btn btn-warning'
+          td = link_to 'Destroy', team, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
   br
   - if user_signed_in?

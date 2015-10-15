@@ -4,6 +4,7 @@
   table.table
     thead
       tr
+        th Champ
         th Name
         th
         th
@@ -12,6 +13,7 @@
     tbody
       - @seasons.each do |season|
         tr
+          td = season.championship.name
           td = season.name
           td = link_to 'Show', season, class: 'btn btn-default'
           td = link_to 'Edit', edit_season_path(season), class: 'btn btn-warning'

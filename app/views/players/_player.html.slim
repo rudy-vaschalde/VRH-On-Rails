@@ -1,4 +1,4 @@
-= image_tag player.photo.url(:thumb), :class => "player-thumb"
+a href="#{player_path player}" = image_tag player.photo.url(:thumb), :class => "player-thumb"
 h4
   = link_to "#{player.first_name} #{player.last_name}", player
 
