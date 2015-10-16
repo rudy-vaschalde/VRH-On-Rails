@@ -31,7 +31,18 @@
     padding: 10px;
     text-align: right;
     color: white;
-
+    a{
+      color: white;
+      &:hover{
+        text-decoration: none;
+        .lineup{
+          color: $brand-info;
+        }
+      }
+    }
+    .lineup{
+      color: $brand-primary;
+    }
     h3{
       margin: 0 0 5px 0;
     }

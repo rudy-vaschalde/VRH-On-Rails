@@ -1,17 +1,18 @@
 .container-fluid.content
-  p
-    strong Match day:
-    = @game.match_day
-  p
-    strong Overtime:
-    = @game.overtime
+  h1.text-primary
+    = format_date @game.match_day
+  - if @game.overtime?
+    h2.text-info = "OVERTIME"
 
-  p
-    strong Visitor:
-    = @game.visitor_team.name
-  p
-    strong Home:
-    = @game.home_team.name
-- if user_signed_in?
-  => link_to 'Edit', edit_game_path(@game), class: 'btn btn-warning'
-  => link_to 'Back', games_path, class: 'btn btn-primary'
+  br
+  .row
+    .col-md-6 = render "teams/team", team: @game.home_team
+    .col-md-6 = render "teams/team", team: @game.visitor_team
+
+
+
+  - if user_signed_in?
+    br
+    .well
+      => link_to 'Edit', edit_game_path(@game), class: 'btn btn-warning'
+      => link_to 'Back', games_path, class: 'btn btn-primary'
