@@ -9,10 +9,6 @@
     .col-md-6 = render "teams/team", team: @game.home_team
     .col-md-6 = render "teams/team", team: @game.visitor_team
 
-
-
-  - if user_signed_in?
-    br
-    .well
-      => link_to 'Edit', edit_game_path(@game), class: 'btn btn-warning'
-      => link_to 'Back', games_path, class: 'btn btn-primary'
+  = content_for :admin
+    => link_to 'Edit', edit_game_path(@game), class: 'btn btn-warning'
+    => link_to 'Back', games_path, class: 'btn btn-primary'

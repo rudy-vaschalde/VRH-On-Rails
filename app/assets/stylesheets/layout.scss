@@ -10,15 +10,6 @@
     top: -9px;
     width: 45px;
   }
-
-  // .nav.navbar-nav{
-
-  //   li a:hover{
-  //     background: $vrh-blue;
-  //     color: #eee;
-  //   }
-  // }
-
 }
 
 #partner-footer{
@@ -33,6 +24,14 @@
   }
 
 }
+
+nav.admin-features{
+  margin-top: 20px;
+  margin-right: 5.2%;
+  list-style: none;
+  float: right;
+}
+
 
 #footer{
   background: $midnight-blue;

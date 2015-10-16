@@ -9,6 +9,8 @@ html
 body
   #page-body
     == render 'layouts/header'
+    - if signed_in? && !yield(:admin).empty?
+        nav.admin-features == yield :admin
     == render 'layouts/notice'
     == yield
     == render 'layouts/footer'

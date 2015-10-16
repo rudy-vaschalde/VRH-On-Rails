@@ -1,21 +1,22 @@
-h1 Listing championships
+.container-fluid.content
+  h1 Liste des championnats
+  br
 
-table.table
-  thead
-    tr
-      th Name
-      th
-      th
-      th
+  .row
+    .col-md-6
+      table.table
+        thead
+          tr
+            th Nom
+            th
+            th
 
-  tbody
-    - @championships.each do |championship|
-      tr
-        td = championship.name
-        td = link_to 'Show', championship, class: 'btn btn-default'
-        td = link_to 'Edit', edit_championship_path(championship), class: 'btn btn-warning'
-        td = link_to 'Destroy', championship, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+        tbody
+          - @championships.each do |championship|
+            tr
+              td = link_to championship.name, championship
+              td = link_to 'Edit', edit_championship_path(championship), class: 'btn btn-warning'
+              td = link_to 'Destroy', championship, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
 
-br
-- if user_signed_in?
-  = link_to 'New Championship', new_championship_path, class: 'btn btn-primary'
+= content_for :admin
+  = link_to 'Nouveau championnat', new_championship_path, class: 'btn btn-primary'

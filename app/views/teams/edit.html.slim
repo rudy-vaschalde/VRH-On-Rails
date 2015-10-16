@@ -1,9 +1,7 @@
 .container-fluid.content
-  h1 Editing team
-
+  h1 Modifier l'équipe
   == render 'form'
 
-  = link_to 'Show', @team
-  '|
-  = link_to 'Back', teams_path
+= content_for :admin
+  = link_to 'Back', teams_path, class: "btn btn-default"
 

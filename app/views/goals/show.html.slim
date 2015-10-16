@@ -3,6 +3,7 @@ p#notice = notice
 p
   strong Game:
   = @goal.game
-- if user_signed_in?
+
+= content_for :admin
   = link_to 'Edit', edit_goal_path(@goal), class: 'btn btn-warning'
   = link_to 'Back', goals_path, class: 'btn btn-primary'
