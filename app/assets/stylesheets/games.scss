@@ -1,0 +1,21 @@
+.score-form {
+  max-width: 450px;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 8px;
+  @media(max-width: 1300px){
+    margin-left: 10px;
+  }
+}
+
+.big-vs{
+  font-size: 80px;
+  font-weight: bold;
+  color: $brand-primary;
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px;
+  @media(max-width: 1300px){
+    display: none;
+  }
+}
