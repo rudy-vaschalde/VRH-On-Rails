@@ -5,22 +5,26 @@
       ul
         - @game.errors.full_messages.each do |message|
           li = message
-
-  = f.datetime_select :match_day, label: "Date et horaire du match"
-  = f.check_box :overtime
-
   .row
-    .col-xs-6
-      .media
-        .media-left.media-middle
-          #home-team-logo = image_tag Team.first.logo.url
-        .media-body
-          = f.select :home_team_id, options_from_collection_for_select(Team.all, 'id', 'name'), {label: "Équipe d'accueil"}, data: {fetch_logo: "#home-team-logo"}
-    .col-xs-6
-      .media
-        .media-left.media-middle
-          #visitor-team-logo = image_tag Team.first.logo.url
-        .media-body
-          = f.select :visitor_team_id, options_from_collection_for_select(Team.all, 'id', 'name'), {label: "Équipe visiteur"}, data: {fetch_logo: "#visitor-team-logo"}
-  = f.submit "Sauvegarder le match", class: "btn btn-success"
+    .col-md-4
+      h2 Informations
+      = f.datetime_select :match_day, label: "Date et horaire du match"
+      = f.check_box :overtime
+    .col-md-8
+      h2 Equipes
+      .row
+        .col-xs-6
+          .media
+            .media-left.media-middle
+              #home-team-logo = image_tag Team.first.logo.url
+            .media-body
+              = f.select :home_team_id, options_from_collection_for_select(Team.all, 'id', 'name'), {label: "Équipe d'accueil"}, data: {fetch_logo: "#home-team-logo"}
+        .col-xs-6
+          .media
+            .media-left.media-middle
+              #visitor-team-logo = image_tag Team.first.logo.url
+            .media-body
+              = f.select :visitor_team_id, options_from_collection_for_select(Team.all, 'id', 'name'), {label: "Équipe visiteur"}, data: {fetch_logo: "#visitor-team-logo"}
+
+  .text-right = f.submit "Sauvegarder le match", class: "btn btn-success"
 
