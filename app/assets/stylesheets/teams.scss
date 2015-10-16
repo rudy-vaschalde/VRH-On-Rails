@@ -1,3 +1,10 @@
 .team-logo{
   width: 300px;
 }
+
+#visitor-team-logo, #home-team-logo{
+  width: 150px;
+  img{
+    width: 100%;
+  }
+}

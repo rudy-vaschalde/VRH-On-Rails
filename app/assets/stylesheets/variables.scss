@@ -1,29 +1,29 @@
 // SCSS variables used in all the SCSS files
 @font-face {
-  font-family: 'SourceSansPro-Regular';
+  font-family: 'SourceSansPro';
   src: font-url('SourceSansPro-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'SourceSansPro-Bold';
+  font-family: 'SourceSansPro';
   src: font-url('SourceSansPro-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 800;
+  font-style: 800;
 }
 
 @font-face {
-  font-family: 'SourceSansPro-Light';
+  font-family: 'SourceSansPro';
   src: font-url('SourceSansPro-Light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 300;
+  font-style: 300;
 }
 
 @font-face {
-  font-family: 'SourceSansPro-Semibold';
+  font-family: 'SourceSansPro';
   src: font-url('SourceSansPro-Semibold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 600;
+  font-style: 600;
 }
 
 //colors
