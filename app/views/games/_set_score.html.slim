@@ -1,0 +1,8 @@
+h1 Score
+p.text-muted Ce formulaire permet de changer le score d'un match. Buteur/passeur sont des champs facultatifs.
+br
+.row
+  .col-xs-3
+    = render "games/score_form", team: @game.home_team
+  .col-xs-3
+    = render "games/score_form", team: @game.visitor_team

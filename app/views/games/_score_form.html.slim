@@ -1,0 +1,4 @@
+= render "teams/team", team: team
+p.score = team.score(@game)
+ul = render @game.goals.where(team: team), game: @game
+= render "goals/form", team: team, game: @game

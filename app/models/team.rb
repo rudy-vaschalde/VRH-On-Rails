@@ -26,4 +26,8 @@ class Team < ActiveRecord::Base
     @n4 ||= Team.find_by(championship: Championship.n4, city: "Voreppe")
   end
 
+  def score(game)
+    self.goals.where(game: game).score
+  end
+
 end

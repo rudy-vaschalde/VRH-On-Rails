@@ -17,13 +17,18 @@ class Game < ActiveRecord::Base
     self.visitor_team.goals
   end
 
+  def winner?(team)
+    # TODO
+  end
+
   # Add a goal for this game
-  # +side+:: symbol that specify :visitor or :home
-  # +scorer+:: instance of a Player (optional)
-  # +passer+:: instance of a Player (optional)
-  def score(side, scorer = nil, passer = nil)
-    team = :home ? self.home_team : self.visitor_team
-    self.goals << Goal.new(team: team, scorer: scorer, passer: passer)
+  # +team+:: instance of a team
+  # +scorer_id+:: id of a Player (optional)
+  # +passer_id+:: id of a Player (optional)
+  def score!(team, scorer_id = nil, passer_id = nil)
+    new_goal = Goal.new(team: team, scorer_id: scorer_id, passer_id: passer_id)
+    self.goals << new_goal
+    return new_goal.valid?
   end
 
   # Class methods

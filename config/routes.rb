@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :games
+  resources :games do
+    post :score, on: :member
+    delete :delete_goal, on: :member
+  end
   resources :players
   resources :ranks
   resources :teams

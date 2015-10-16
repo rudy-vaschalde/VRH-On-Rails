@@ -1,0 +1,11 @@
+li
+  - if goal.scorer
+    strong> = goal.scorer.full_name
+  - else
+    strong> Buteur inconnu
+  - if goal.passer
+    span.text-muted> = goal.passer.full_name
+  - else
+    span.text-muted> Passeur inconnu
+
+  strong> = link_to "X", delete_goal_game_path(game, goal_id: goal.id), method: :delete, class: "text-danger"

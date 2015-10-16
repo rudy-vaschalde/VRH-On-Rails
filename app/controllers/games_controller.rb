@@ -1,6 +1,25 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:show, :edit, :update, :destroy, :score, :delete_goal]
+  before_action :set_team, only: [:score]
   before_action :authenticate_user!, except: [:show, :index]
+
+  # POST /game/:id/score
+  def score
+    if @game.score!(@team, params[:scorer_id], params[:passer_id])
+      redirect_to edit_game_path(@game), notice: "Goal!"
+    else
+      redirect_to edit_game_path(@game), alert: "Erreur"
+    end
+  end
+
+  # DELETE /games/:id/delete_goal
+  def delete_goal
+    if Goal.find(params[:goal_id]).destroy
+      redirect_to edit_game_path(@game), notice: "But supprimé."
+    else
+      redirect_to edit_game_path(@game), alert: "Erreur"
+    end
+  end
 
   # GET /games
   # GET /games.json
@@ -74,5 +93,9 @@ class GamesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
       params.require(:game).permit(:match_day, :overtime, :home_team_id, :visitor_team_id)
+    end
+
+    def set_team
+      @team = Team.find(params[:team])
     end
 end
