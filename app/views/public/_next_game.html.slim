@@ -3,7 +3,7 @@ h3.headline Prochain Match N2
   p = format_date @next_match.match_day
   p
     => image_tag @next_match.home_team.logo.url(:thumb)
-    | #{@next_match.home_team.city} vs #{@next_match.visitor_team.city} &nbsp;
+    span> #{@next_match.home_team.city} vs #{@next_match.visitor_team.city}
     => image_tag @next_match.visitor_team.logo.url(:thumb)
 - else
   p.text-muted Aucun match n'est programmé.
