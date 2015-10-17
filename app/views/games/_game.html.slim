@@ -1,23 +1,10 @@
-td
-  = format_date game.match_day
-td
-  => image_tag game.home_team.logo.url(:thumb)
-  => game.home_team.name
-  => game.home_team.city
-td.score
-  - if game.match_day < Time.now
-    = link_to game_path game
-      => game.home_team.score(game)
-      span> -
-      => game.visitor_team.score(game)
-      - if game.overtime?
-        span> a.p.
-  - else
-    | VS
-td
-  => image_tag game.visitor_team.logo.url(:thumb)
-  => game.visitor_team.name
-  => game.visitor_team.city
+td = format_date game.match_day
+
+td == render "teams/thumb", team: game.home_team
+td.score == render "games/score", game: game
+td == render "teams/thumb", team: game.visitor_team
+
+
 - if user_signed_in?
   td
     => link_to 'Edit', edit_game_path(game), class: 'btn btn-warning btn-sm'

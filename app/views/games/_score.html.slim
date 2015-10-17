@@ -1,0 +1,6 @@
+- if game.past?
+  = link_to format_score(game), game
+  - if game.overtime?
+    span a.p.
+- else
+  span VS

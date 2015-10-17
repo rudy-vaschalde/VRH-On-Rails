@@ -1,10 +1,10 @@
 .score-form {
   max-width: 450px;
   display: inline-block;
-  margin-left: 20px;
-  padding: 8px;
+  margin-right: 20px;
+  vertical-align: top;
   @media(max-width: 1300px){
-    margin-left: 10px;
+    margin-right: 30px;
   }
 }
 

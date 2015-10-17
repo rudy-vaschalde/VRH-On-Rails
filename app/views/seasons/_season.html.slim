@@ -18,11 +18,7 @@ table.table.table-striped.table-bordered
     - season.ordered_ranks.each_with_index do |rank, index|
       tr
         td = index+1
-        td.link_to_team
-          = link_to rank.team do
-            => image_tag rank.team.logo.url(:thumb)
-            => rank.team.name
-            => rank.team.city
+        td == render "teams/thumb", team: rank.team
         - unless small
           td = rank.game_count
           td = rank.win

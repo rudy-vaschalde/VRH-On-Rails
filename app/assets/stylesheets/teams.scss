@@ -3,7 +3,7 @@
 }
 
 #visitor-team-logo, #home-team-logo{
-  width: 150px;
+  width: 50px;
   img{
     width: 100%;
   }
@@ -13,4 +13,8 @@ p.score{
   text-align: center;
   font-weight: bold;
   font-size: 60px;
+}
+
+ul.goals{
+  padding-left: 15px;
 }

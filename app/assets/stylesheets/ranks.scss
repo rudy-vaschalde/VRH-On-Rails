@@ -1,5 +1,5 @@
-.link_to_team{
-  a:hover, a:visited, a:active{
+a.link_to_team{
+  &:hover, &:visited, &:active{
     text-decoration: none;
   }
 }

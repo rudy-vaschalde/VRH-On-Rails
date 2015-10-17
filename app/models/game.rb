@@ -21,6 +21,10 @@ class Game < ActiveRecord::Base
     # TODO
   end
 
+  def past?
+    match_day < Time.now
+  end
+
   # Add a goal for this game
   # +team+:: instance of a team
   # +scorer_id+:: id of a Player (optional)
