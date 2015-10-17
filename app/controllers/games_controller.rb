@@ -25,9 +25,9 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     if params[:team].blank?
-      @games = Game.all
+      @games = Game.all.order(match_day: :asc)
     else
-      @games = Team.find(params[:team]).all_games
+      @games = Team.find(params[:team]).all_games.order(match_day: :asc)
     end
   end
 

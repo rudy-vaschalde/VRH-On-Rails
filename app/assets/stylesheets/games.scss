@@ -19,3 +19,17 @@
     display: none;
   }
 }
+
+table.table{
+
+  td{
+    vertical-align: middle;
+  }
+  .score{
+    font-size: 140%;
+  }
+}
+
+table.table > tbody > tr > td{
+  vertical-align: middle;
+}

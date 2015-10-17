@@ -1,10 +1,19 @@
 td
-  = game.match_day.to_formatted_s(:short)
+  = format_date game.match_day
 td
   => image_tag game.home_team.logo.url(:thumb)
   => game.home_team.name
   => game.home_team.city
-td VS
+td.score
+  - if game.match_day < Time.now
+    = link_to game_path game
+      => game.home_team.score(game)
+      span> -
+      => game.visitor_team.score(game)
+      - if game.overtime?
+        span> a.p.
+  - else
+    | VS
 td
   => image_tag game.visitor_team.logo.url(:thumb)
   => game.visitor_team.name
