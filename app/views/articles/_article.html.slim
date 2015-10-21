@@ -12,5 +12,5 @@
           i.glyphicon.glyphicon-calendar
           => format_date article.created_at
   p
-    = article.content.truncate(200)
+    = strip_tags article.content.truncate(200)
     => link_to "Voir plus", article

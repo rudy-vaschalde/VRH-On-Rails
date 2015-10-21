@@ -6,7 +6,7 @@
     i.glyphicon.glyphicon-calendar
     => @article.created_at.to_formatted_s(:short)
 
-  p = @article.content
+  p = @article.content.html_safe
 
   = content_for :admin
     = link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning'

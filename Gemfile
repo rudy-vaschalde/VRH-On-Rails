@@ -23,6 +23,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-turbolinks'
 
+# Front end
+gem 'ckeditor'
 
 group :development, :test do
   gem 'byebug'

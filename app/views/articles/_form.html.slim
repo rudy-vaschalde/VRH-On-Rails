@@ -7,6 +7,6 @@
           li = message
 
   = f.text_field :title
-  = f.text_area :content
+  = f.cktext_area :content, :ckeditor => {:language => 'fr'}, rows: 50
   = f.file_field :article_image
   = f.submit

@@ -10,3 +10,4 @@ Rails.application.config.assets.version = '1.2'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 #Rails.application.config.assets.precompile += %w( SourceSansPro-Regular.ttf )
+Rails.application.config.assets.precompile += %w( ckeditor/* )
