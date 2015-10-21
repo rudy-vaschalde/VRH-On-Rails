@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011204025) do
+ActiveRecord::Schema.define(version: 20151021180722) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20151011204025) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "jersey"
   end
 
   add_index "players", ["team_id"], name: "index_players_on_team_id"

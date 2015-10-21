@@ -8,13 +8,16 @@
         => @player.last_name
         => image_tag @player.team.logo.url(:thumb)
       h3.headline
+        strong Numéro:
+        => @player.jersey
+      h3.headline
         strong Surnom:
         => @player.surname
       h3.headline
-        strong taille:
+        strong Taille:
         => @player.height
       h3.headline
-        strong poids:
+        strong Poids:
         => @player.weight
 
   - if user_signed_in?
