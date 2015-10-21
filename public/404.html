@@ -4,64 +4,60 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-width: 100%;
+      min-height: 100%;
+      background-color: white;
+      font-family: arial, sans-serif;
+      margin: 0;
+      background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(img/G74ERKAUUC_vrh.jpg);
+      background-repeat: no-repeat;
+      background-position: 30% 75%;
+      background-size: 100%;
+    }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    h1 {
+      margin: 0 0 0 50px;
+      font-size: 4vw;
+      color: #3498db;
+      line-height: 2em;
+    }
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    p{
+      padding: 10pw;
+      margin-left: 50px;
+      font-size: 1vw;
+      color: white;
+    }
+    .brand{
+      font-size: 4vw;
+      color: #3498db;
+    }
+    a{
+      color: #3498db;
+    }
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
   </style>
 </head>
-
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+    <div id="maintext">
+      <h1>404 - Oups la page demand&eacute;e n'est plus l&agrave; !</h1>
+      <p class="lead">Il semblerait que la troisi&egrave;me mi-temps ai d&eacute;marr&eacute;e, la page recherch&eacute;e n'est donc plus disponible <span class="brand">;)</span></p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+    <div id="subtext">
+      <p>Faites de m&ecirc;me, d&eacute;tendez vous et profitez de l'instant !</p>
+      <p><a href="http://www.vorepperollerhockey.com">Mais n'oubliez pas de retourner en terre connue pour retrouver toute l'actualit&eacute; du VRH</a></p>
+    </div>
 </body>
 </html>
