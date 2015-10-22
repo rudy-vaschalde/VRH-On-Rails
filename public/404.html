@@ -15,49 +15,87 @@
       background-color: white;
       font-family: arial, sans-serif;
       margin: 0;
-      background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(img/G74ERKAUUC_vrh.jpg);
+      background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/img/G74ERKAUUC_vrh.jpg);
       background-repeat: no-repeat;
       background-position: 30% 75%;
       background-size: 100%;
     }
 
-    #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
+    .container-fluid {
+      width: 90%;
+      padding: 10px 0;
+      margin: 0 auto;
     }
 
     h1 {
-      margin: 0 0 0 50px;
+      text-align: center;
       font-size: 4vw;
       color: #3498db;
-      line-height: 2em;
+      margin-top: 0;
+    }
+
+    h2{
+      font-size: 3vw;
+      color: white;
+      padding-left: 1vw;
+      border-left: 1vw solid #3498db;
     }
 
     p{
-      padding: 10pw;
-      margin-left: 50px;
       font-size: 1vw;
       color: white;
     }
     .brand{
-      font-size: 4vw;
+      font-size: 2vw;
       color: #3498db;
     }
     a{
       color: #3498db;
     }
 
+    a.button{
+      color: white;
+      display: inline-block;
+      background-color: #3498db;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      text-decoration: none;
+      border-radius: 6px;
+      border: 1px solid #258cd1;
+      padding: 25px 50px;
+    }
+
+    a.button:hover {
+      color: #fff;
+      background-color: #217dbb;
+      border-color: #1c699d;
+    }
+
+    @media screen and (orientation:portrait) {
+      body {
+        background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/img/G74ERKAUUC_vrh.jpg);
+        background-repeat: no-repeat;
+        background-position: 90% 75%;
+        background-size: 240%;
+      }
+    }
+
+
   </style>
 </head>
 <body>
+  <div class="container-fluid">
     <div id="maintext">
-      <h1>404 - Oups la page demand&eacute;e n'est plus l&agrave; !</h1>
+      <h1>404 - Oups !</h1>
+      <h2>La page demand&eacute;e n'est plus l&agrave; !</h2>
       <p class="lead">Il semblerait que la troisi&egrave;me mi-temps ai d&eacute;marr&eacute;e, la page recherch&eacute;e n'est donc plus disponible <span class="brand">;)</span></p>
     </div>
     <div id="subtext">
       <p>Faites de m&ecirc;me, d&eacute;tendez vous et profitez de l'instant !</p>
       <p><a href="http://www.vorepperollerhockey.com">Mais n'oubliez pas de retourner en terre connue pour retrouver toute l'actualit&eacute; du VRH</a></p>
     </div>
+    <a href="http://www.vorepperollerhockey.com" class="button">Retour &agrave; l'accueil</a>
+  </div>
 </body>
 </html>
