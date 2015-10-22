@@ -1,5 +1,5 @@
 - if game.past?
-  = link_to format_score(game), game
+  = link_to format_score(game), game, remote: true
   - if game.overtime?
     span a.p.
 - else

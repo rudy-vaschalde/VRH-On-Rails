@@ -33,6 +33,7 @@ class GamesController < ApplicationController
 
   # GET /games/1
   # GET /games/1.json
+  # REMOTE only
   def show
   end
 

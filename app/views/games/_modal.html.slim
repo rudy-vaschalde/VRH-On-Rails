@@ -1,0 +1,28 @@
+#game-modal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title = "#{game.home_team.name} vs #{game.visitor_team.name}"
+      .modal-body
+        h1.text-primary
+          = format_date @game.match_day
+        - if @game.overtime?
+          h2.text-info = "OVERTIME"
+
+        br
+        .row
+          .col-md-4 = render "teams/team", team: @game.home_team
+          .col-md-1
+            p.score = @game.home_team.score(@game)
+          .col-md-1
+            p.score -
+          .col-md-1
+            p.score = @game.visitor_team.score(@game)
+          .col-md-4 = render "teams/team", team: @game.visitor_team
+
+        = content_for :admin
+          => link_to 'Edit', edit_game_path(@game), class: 'btn btn-warning'
+          => link_to 'Back', games_path, class: 'btn btn-primary'
+
+      .modal-footer
+        = link_to "Fermer", "#", data: {dismiss: "modal"}, class: "btn btn-default"
