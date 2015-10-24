@@ -21,6 +21,13 @@
 }
 
 table.table{
+  tr.win{
+    background-color: rgba($brand-success, 0.25);
+  }
+
+  tr.lose{
+    background-color: rgba($brand-danger, 0.25);
+  }
 
   td{
     vertical-align: middle;

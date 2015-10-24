@@ -19,6 +19,12 @@
           .col-md-1
             p.score = @game.visitor_team.score(@game)
           .col-md-4 = render "teams/team", team: @game.visitor_team
+        .row
+          .col-md-5
+            = render @game.goals.where(team: @game.home_team), game: @game
+          .col-md-1
+          .col-md-5
+            = render @game.goals.where(team: @game.visitor_team), game: @game
 
         = content_for :admin
           => link_to 'Edit', edit_game_path(@game), class: 'btn btn-warning'

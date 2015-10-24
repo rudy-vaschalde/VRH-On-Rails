@@ -10,15 +10,15 @@ class Game < ActiveRecord::Base
 
   # Instance methods
   def home_goals
-    self.home_team.goals
+    self.home_team.goals.where('game_id = ?', self.id)
   end
 
   def visitor_goals
-    self.visitor_team.goals
+    self.visitor_team.goals.where('game_id = ?', self.id)
   end
 
   def winner?(team)
-    # TODO
+    home_goals.count > visitor_goals.count ? (home_team.id == team.id) : (visitor_team.id == team.id)
   end
 
   def past?

@@ -7,5 +7,5 @@ td == render "teams/thumb", team: game.visitor_team
 
 - if user_signed_in?
   td
-    => link_to 'Edit', edit_game_path(game), class: 'btn btn-warning btn-sm'
+    => link_to 'Edit', edit_game_path(game), class: 'btn btn-success btn-sm'
     => link_to 'Destroy', game, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger btn-sm'
