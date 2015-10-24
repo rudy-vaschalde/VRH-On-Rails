@@ -43,3 +43,5 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap_form'
 
+# # Useful helpers
+# gem 'statyx_helpers', '1.7', git: 'git://github.com/statyx/statyx-helpers.git'

@@ -11,12 +11,8 @@
           th Actions
     tbody
       - @games.each do |game|
-        - if game.past?
-          tr class=(game.winner?(@team) ? 'win' : 'lose')
-            == render game
-        - else
-          tr
-            == render game
+        tr class=(game_status(game, @team))
+          == render game
 
   - if user_signed_in?
     = link_to 'New Game', new_game_path, class: 'btn btn-primary'

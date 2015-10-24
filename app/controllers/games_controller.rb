@@ -27,8 +27,8 @@ class GamesController < ApplicationController
     if params[:team].blank?
       @games = Game.all.order(match_day: :asc)
     else
-      @games = Team.find(params[:team]).all_games.order(match_day: :asc)
       @team = Team.find(params[:team])
+      @games = @team.all_games.order(match_day: :asc)
     end
   end
 
