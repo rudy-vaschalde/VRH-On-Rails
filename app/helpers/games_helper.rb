@@ -12,5 +12,4 @@ module GamesHelper
       game.winner?(team) ? 'win' : 'lose'
     end
   end
-
 end

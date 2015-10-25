@@ -8,6 +8,7 @@ class Player < ActiveRecord::Base
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
 
+  # TODO should be in a decorator
   def full_name
     "#{first_name} #{last_name}"
   end

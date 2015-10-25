@@ -9,11 +9,12 @@
       .image-holder
         = image_tag @team.team_photo.url(:original), class: "team-photo"
 
-  h3.headline Joueurs
-  .row
-    - @team.players.each do |player|
-      .col-md-3.player-portrait
-        == render player
+  - unless @team.players.empty?
+    h3.headline Joueurs
+    .row
+      - @team.players.each do |player|
+        .col-md-3.player-portrait
+          == render player
   / .container
   /   h3 Résultats
   /   - @team.all_games.each do |game|

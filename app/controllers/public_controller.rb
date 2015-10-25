@@ -1,5 +1,6 @@
 class PublicController < ApplicationController
-
+  # APPLICATION ROOT
+  # GET /public/index
   def index
     if Championship.n2.nil? || Championship.n4.nil?
         @current_seasons = [nil, nil]
@@ -10,15 +11,11 @@ class PublicController < ApplicationController
     @next_match = Game.next_n2
   end
 
+  # GET /public/about
   def about
   end
 
-  def nat2
-  end
-
-  def nat4
-  end
-
+  # GET /public/contact
   def contact
   end
 end
