@@ -28,7 +28,7 @@ class GamesControllerTest < ActionController::TestCase
   end
 
   test "should show game" do
-    get :show, id: @game
+    xhr :get, :show, id: @game, format: :js
     assert_response :success
   end
 

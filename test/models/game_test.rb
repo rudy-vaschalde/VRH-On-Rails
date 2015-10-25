@@ -9,18 +9,18 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test "home goals should return home team goals" do
-    assert_equal 1, @game.home_goals.count
+    assert_equal 1, @game.home_goals.score
     assert_equal goals(:one), @game.home_goals.first
   end
 
   test "visitor goals should return visitor team goals" do
-    assert_equal 1, @game.visitor_goals.count
-    assert_equal goals(:two), @game.visitor_goals.first
+    assert_equal 1, @game.visitor_goals.score
+    assert_equal goals(:three), @game.visitor_goals.first
   end
 
   test "a team scored a goal" do
-    assert_difference "@game.goals.count", 1 do
-      @game.score(:home)
+    assert_difference "@game.goals.score", 1 do
+      @game.score!(@game.home_team)
       @game.save!
     end
     assert_nil Goal.last.scorer
@@ -28,8 +28,8 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test "a player scored a goal" do
-    assert_difference "@game.goals.count", 1 do
-      @game.score(:home, @barry)
+    assert_difference "@game.goals.score", 1 do
+      @game.score!(@game.home_team, @barry)
       @game.save!
     end
     assert @barry, Goal.last.scorer
@@ -37,8 +37,8 @@ class GameTest < ActiveSupport::TestCase
   end
 
   test "a player helped by a passer scored a goal" do
-    assert_difference "@game.goals.count", 1 do
-      @game.score(:home, @barry, @hal_jordan)
+    assert_difference "@game.goals.score", 1 do
+      @game.score!(@game.home_team, @barry, @hal_jordan)
       @game.save!
     end
     assert @barry, Goal.last.scorer
