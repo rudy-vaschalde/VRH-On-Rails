@@ -1,14 +1,13 @@
-.container-fluid.content
-  .media
-    .media-left.media-middle
-      = image_tag @team.logo.url(:medium), class: "team-logo"
+.team-header style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(#{@team.team_photo.url(:large)});background-size: 100%;background-repeat: no-repeat;background-position: 30% 20%;"
+  media
+    .media-left
+      .team-logo
+        = image_tag @team.logo.url(:medium), class: "team-logo"
     .media-body
       h2.media-heading
         => @team.name
         => @team.city
-      .image-holder
-        = image_tag @team.team_photo.url(:original), class: "team-photo"
-
+.container-fluid.content
   h3.headline Joueurs
   .row
     - @team.players.each do |player|

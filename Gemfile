@@ -45,3 +45,4 @@ gem 'bootstrap_form'
 
 # # Useful helpers
 # gem 'statyx_helpers', '1.7', git: 'git://github.com/statyx/statyx-helpers.git'
+# gem 'draper'
