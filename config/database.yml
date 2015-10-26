@@ -13,11 +13,4 @@ test: &test
 
 production:
   <<: *default
-  # host: localhost
-  # port: 5432
-  # adapter: postgresql
-  # encoding: unicode
-  # database: vrh
-  # pool: 5
-  # username: vrh
-  # password: vrh
+

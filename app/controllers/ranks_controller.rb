@@ -26,7 +26,6 @@ class RanksController < ApplicationController
   # POST /ranks.json
   def create
     @rank = Rank.new(rank_params)
-
     respond_to do |format|
       if @rank.save
         format.html { redirect_to @rank, notice: 'Rank was successfully created.' }

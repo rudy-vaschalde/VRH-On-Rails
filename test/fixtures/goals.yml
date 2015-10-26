@@ -5,3 +5,7 @@ one:
 two:
   game: two
   team: three
+
+three:
+  game: one
+  team: three

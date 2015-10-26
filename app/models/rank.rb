@@ -10,6 +10,4 @@ class Rank < ActiveRecord::Base
   def points
     @points ||= self.win*3 + self.tie + self.win_ot*2 + self.loss_ot
   end
-
 end
-
