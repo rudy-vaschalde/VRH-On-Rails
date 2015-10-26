@@ -18,16 +18,6 @@ class PublicControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get nat2" do
-    get :nat2
-    assert_response :success
-  end
-
-  test "should get nat4" do
-    get :nat4
-    assert_response :success
-  end
-
   test "should get contact" do
     get :contact
     assert_response :success
