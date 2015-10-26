@@ -18,6 +18,20 @@
     }
 }
 
+.player-portrait{
+
+  span.jersey{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    color: #3498db;
+    font-size: 45px;
+  }
+
+  span.jersey:before {
+    content: "#";
+  }
+}
 
 #visitor-team-logo, #home-team-logo{
   width: 50px;
