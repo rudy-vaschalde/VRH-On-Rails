@@ -1,6 +1,6 @@
 h3.headline Prochain Match N2
 - if @next_match
-  = link_to @next_match do
+  = link_to @next_match, remote: true do
     p = format_date @next_match.match_day
     p.lineup
       => image_tag @next_match.home_team.logo.url(:thumb)
