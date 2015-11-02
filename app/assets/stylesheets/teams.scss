@@ -20,12 +20,35 @@
 }
 
 .player-portrait{
+  padding: 10px;
+
+  .player-thumb{
+    background: $concrete;
+  }
+
+  .player-heading{
+    background: $midnight-blue;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+
+    h4{
+      margin: 0;
+
+      a{
+        display:block;
+        width: 100%;
+        height: 100%;
+        color: white;
+      }
+    }
+  }
 
   span.jersey{
     position: absolute;
     top: 5px;
     left: 15px;
-    color: #3498db;
+    color: $vrh-blue;
     font-size: 45px;
   }
 
