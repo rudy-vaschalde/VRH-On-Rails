@@ -23,7 +23,15 @@
   padding: 10px;
 
   .player-thumb{
+    transition: 0.35s;
     background: $concrete;
+    opacity: 1;
+  }
+
+  .player-thumb:hover{
+    transition: 0.35s;
+    background: darken($concrete, 15%);
+    opacity: 0.9;
   }
 
   .player-heading{
@@ -56,6 +64,7 @@
     content: "#";
   }
 }
+
 
 #visitor-team-logo, #home-team-logo{
   width: 50px;
