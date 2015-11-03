@@ -12,9 +12,18 @@ html
 body
   #page-body
     == render 'layouts/header'
-    - if signed_in? && !yield(:admin).empty?
-        nav.admin-features == yield :admin
+    - if signed_in?
+        nav.admin-features.admin-push-menu
+            h3 Administration
+            ul.nav.nav-pills.nav-stacked
+                li role="presentation" = link_to "Championnats", championships_path
+                li role="presentation" = link_to "Saisons", seasons_path
+                li role="presentation" = link_to "Classements", ranks_path
+                li role="presentation" = link_to "Equipes", teams_path
+                li role="presentation" = link_to "Joueurs", players_path
+                li role="presentation" = link_to "Matchs", games_path
     == render 'layouts/notice'
-    == yield
-    == render 'layouts/footer'
+    #app-content class=('body-push admin-push-menu' if signed_in?)
+        == yield
+        == render 'layouts/footer'
   #modals

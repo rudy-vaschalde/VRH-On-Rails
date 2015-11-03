@@ -23,11 +23,85 @@
   }
 }
 
+#admin-panel-toggle{
+  display: inline-block;
+  z-index: 1050;
+  margin: 2px;
+  padding: 0;
+  width: 35px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  bottom: 0.5em;
+  left: 0.5em;
+  background: linear-gradient($midnight-blue 20%, transparent 20%, transparent 40%, $midnight-blue 40%, $midnight-blue 60%, transparent 60%, transparent 80%, $midnight-blue 80%);
+}
+
+#admin-panel-toggle:hover{
+  opacity: 0.8;
+}
+
+.body-push{
+  overflow: hidden;
+  position: relative;
+  left: 0px;
+}
+
+// .body-push::before{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: -1;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0,0,0,0.3);
+//   content: '';
+//   opacity: 0;
+//   overflow: hidden;
+// }
+
+.to-right{
+  left: 240px
+}
+// .to-right::before{
+//   opacity: 1;
+//   z-index: 1000;
+// }
+
 nav.admin-features{
-  margin-top: 20px;
-  margin-right: 5.2%;
-  list-style: none;
-  float: right;
+  height: 100%;
+  min-height: 100%;
+  width: 240px;
+  display: block;
+  position: fixed;
+  background: $midnight-blue;
+  z-index: 1000;
+  left: -240px;
+  h3{
+    color: white;
+    font-size: 1.9em;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+    background: $vrh-blue;
+  }
+  li{
+    font-size: 1.5em;
+    border-bottom: 1px solid $vrh-blue;
+  }
+}
+
+nav.admin-features-open{
+  left:0;
+}
+
+.admin-push-menu{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 #footer{

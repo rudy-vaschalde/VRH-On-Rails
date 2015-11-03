@@ -4,6 +4,8 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
         span.icon-bar
         span.icon-bar
         span.icon-bar
+    - if signed_in?
+        #admin-panel-toggle
     .container-fluid
         .navbar-header
           a.navbar-brand href="#{root_path}" = image_tag "logo_Primate.png", class: "brand-logo"
