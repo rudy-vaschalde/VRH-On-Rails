@@ -1,8 +1,8 @@
 .container-fluid.content
-  h1 Tous les articles
+  h2 Tous les articles
 
   - @articles.each do |article|
-    .col-md-3.article
+    .col-md-3.col-sm-4.col-xs-6.article
       == render article
       - if user_signed_in?
         => link_to 'Edit', edit_article_path(article), class: 'btn btn-warning'
