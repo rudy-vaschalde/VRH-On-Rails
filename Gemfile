@@ -12,9 +12,7 @@ gem 'puma'
 gem "capistrano-rails", :group => :development
 gem "capistrano3-puma"
 gem "paperclip", "~> 4.3"
-
-# gem 'cape', '~> 1'
-
+gem "turbo-sprockets-rails3"
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
