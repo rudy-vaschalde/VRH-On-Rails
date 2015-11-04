@@ -11,7 +11,7 @@
           th Actions
     tbody
       - @games.each do |game|
-        tr class=(game_status(game, @team))
+        tr class=(game_status(game, @team) if @team)
           == render game
 
   - if user_signed_in?
