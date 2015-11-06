@@ -1,24 +1,11 @@
 h3.headline
-  => season.championship.name
-  small => season.name
-table.table.table-striped.table-bordered
-  thead
-    tr
-      th P
-      th Équipe
-      - unless small
-        th J
-        th V
-        th Du
-        th N
-        th Vp
-        th Dp
-      th Pts
+  => "Classement " + season.championship.name
+table.table.table-striped
   tbody
     - season.ordered_ranks.each_with_index do |rank, index|
       tr
-        td = index+1
-        td == render "teams/thumb", team: rank.team
+        td.text-center style="color: #3498db;" #{index+1}.
+        td = rank.team.city
         - unless small
           td = rank.game_count
           td = rank.win
@@ -26,4 +13,4 @@ table.table.table-striped.table-bordered
           td = rank.tie
           td = rank.win_ot
           td = rank.loss_ot
-        td.pts = rank.points
+        td.pts.text-center   style="color: #3498db;" #{rank.points} pts
