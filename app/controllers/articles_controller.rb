@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @featured = Article.featured
   end
 
   # GET /articles/new

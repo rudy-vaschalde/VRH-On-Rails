@@ -1,13 +1,23 @@
 .container-fluid.content
-
-  = image_tag @article.article_image.url(:original), class: 'article-img'
-  h2 = @article.title
-  small
-    i.glyphicon.glyphicon-calendar
-    => @article.created_at.to_formatted_s(:short)
-
-  p = @article.content.html_safe
-
+  .col-md-10
+    .container
+      = image_tag @article.article_image.url(:original), class: 'article-img'
+      h2 = @article.title
+      small
+        i.glyphicon.glyphicon-calendar
+        => @article.created_at.to_formatted_s(:short)
+      .article-content = @article.content.html_safe
+  .col-md-2
+    h3.headline Dernières news
+    - @featured.each do |ft_Article|
+      figure.featured-thumb
+        .link-overlay
+          .image-holder
+            = image_tag ft_Article.article_image.url(:thumb), class: "article-thumb"
+          = link_to "Voir plus", ft_Article, class: "btn btn-primary btn-lg"
+        figcaption
+          h4
+            small = ft_Article.title
   = content_for :admin
     = link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning'
     = link_to 'Back', articles_path, class: 'btn btn-primary'
