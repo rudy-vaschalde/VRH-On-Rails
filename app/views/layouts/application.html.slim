@@ -16,12 +16,27 @@ body
         nav.admin-features.admin-push-menu
             h3 Administration
             ul.nav.nav-pills.nav-stacked
-                li role="presentation" = link_to "Championnats", championships_path
-                li role="presentation" = link_to "Saisons", seasons_path
-                li role="presentation" = link_to "Classements", ranks_path
-                li role="presentation" = link_to "Equipes", teams_path
-                li role="presentation" = link_to "Joueurs", players_path
-                li role="presentation" = link_to "Matchs", games_path
+                li role="presentation"
+                    => link_to "Championnats", championships_path
+                    => link_to_glyph "", new_championship_path, :plus, class: "add-btn"
+                li role="presentation"
+                    => link_to "Saisons", seasons_path
+                    => link_to_glyph "", new_season_path, :plus, class: "add-btn"
+                li role="presentation"
+                    => link_to "Classements", ranks_path
+                    => link_to_glyph "", new_rank_path, :plus, class: "add-btn"
+                li role="presentation"
+                    => link_to "Equipes", teams_path
+                    => link_to_glyph "", new_team_path, :plus, class: "add-btn"
+                li role="presentation"
+                    => link_to "Joueurs", players_path
+                    => link_to_glyph "", new_player_path, :plus, class: "add-btn"
+                li role="presentation"
+                    => link_to "Matchs", games_path
+                    => link_to_glyph "", new_game_path, :plus, class: "add-btn"
+                li role="presentation"
+                    => link_to "Articles", articles_path
+                    => link_to_glyph "", new_article_path, :plus, class: "add-btn"
     == render 'layouts/notice'
     #app-content class=('body-push admin-push-menu' if signed_in?)
         == yield

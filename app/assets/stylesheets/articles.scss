@@ -15,6 +15,19 @@ article.news{
 .image-holder{
   background: $midnight-blue;
   overflow: hidden;
+  .title-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    text-align: center;
+    width: 100%;
+
+    h4{
+      color: white;
+      font-size: 90%;
+    }
+  }
 }
 
 .link-overlay{
