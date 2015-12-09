@@ -3,3 +3,19 @@ table{
     background: $vrh-blue;
   }
 }
+
+
+table.small{
+  font-size: 100%;
+  td{
+    border-top: none !important;
+  }
+}
+
+td.pts{
+  color: $vrh-blue;
+}
+
+td.pts:after{
+  content: " pts"
+}

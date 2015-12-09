@@ -14,9 +14,8 @@
           .col-md-6 == render article
 
     #side-content.col-md-3
-      - unless @current_seasons.include? nil
-        == render @current_seasons, small: true
-
+      - @current_seasons.each do |season|
+        == render "seasons/small", season: season
 
 
 

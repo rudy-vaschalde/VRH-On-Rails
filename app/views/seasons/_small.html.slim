@@ -1,0 +1,11 @@
+h3.headline
+  => "Classement " + season.championship.name
+table.table.table-striped.small
+  tbody
+    - season.ordered_ranks.each_with_index do |rank, index|
+      tr
+        td.text-center.brand #{index+1}.
+        td
+          == render "teams/thumb", team: rank.team
+        td.pts.text-center = rank.points
+
