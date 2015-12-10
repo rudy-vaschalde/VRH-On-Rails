@@ -9,8 +9,6 @@ gem 'pg'
 
 # Server
 gem 'puma'
-gem "capistrano-rails", :group => :development
-gem "capistrano3-puma"
 gem "paperclip", "~> 4.3"
 
 gem 'sass-rails', '~> 5.0'
@@ -29,6 +27,11 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rails'
+  gem "capistrano3-puma"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
