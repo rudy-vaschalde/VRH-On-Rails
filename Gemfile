@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-
 # Core
 gem 'rails', '4.2.4'
+
 # Database
 gem 'sqlite3'
 gem 'pg'
@@ -10,16 +10,22 @@ gem 'pg'
 # Server
 gem 'puma'
 gem "paperclip", "~> 4.3"
+gem 'slim'
+gem 'slim-rails'
+gem 'devise'
+gem 'draper'
 
-gem 'sass-rails', '~> 5.0'
+# Javascript
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'ckeditor'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
 gem 'jquery-turbolinks'
 
-# Front end
-gem 'ckeditor'
+# Styles
+gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap_form'
 
 group :development, :test do
   gem 'byebug'
@@ -34,15 +40,5 @@ group :development do
   gem "capistrano3-puma"
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# Windows crap
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'slim'
-gem 'slim-rails'
-gem 'devise'
-gem 'bootstrap-sass', '~> 3.3.3'
-gem 'bootstrap_form'
-
-# # Useful helpers
-# gem 'statyx_helpers', '1.7', git: 'git://github.com/statyx/statyx-helpers.git'
-# gem 'draper'
