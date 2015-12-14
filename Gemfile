@@ -27,6 +27,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap_form'
 
+# Analytics
+#gem 'friendly_id', '~> 5.1.0'
+#gem 'metamagic'
+#gem 'google-analytics-rails'
+
 group :development, :test do
   gem 'byebug'
 end
