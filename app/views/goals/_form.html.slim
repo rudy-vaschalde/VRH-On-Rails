@@ -2,6 +2,6 @@ br
   .well
     p.text-info Ajouter un but
     = bootstrap_form_tag url: score_game_path(game, team: team.id), layout: :horizontal do |f|
-      = f.select :scorer_id, options_from_collection_for_select(team.players.merge(nil), 'id', 'full_name'), {label: "Buteur", include_blank: ''}
-      = f.select :passer_id, options_from_collection_for_select(team.players.merge(nil), 'id', 'full_name'), {label: "Passeur", include_blank: ''}
+      = f.select :scorer_id, options_from_collection_for_select(team.players.merge(nil).decorate, 'id', 'full_name'), {label: "Buteur", include_blank: ''}
+      = f.select :passer_id, options_from_collection_for_select(team.players.merge(nil).decorate, 'id', 'full_name'), {label: "Passeur", include_blank: ''}
       = f.submit "Ajouter"

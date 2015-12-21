@@ -1,4 +1,6 @@
 class Goal < ActiveRecord::Base
+  include Decorable
+
   belongs_to :game, required: true
   belongs_to :team, required: true
   belongs_to :scorer, class_name: 'Player'
