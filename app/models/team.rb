@@ -14,8 +14,8 @@ class Team < ActiveRecord::Base
 
   scope :vrh, -> { where(city: "Voreppe") }
 
-  def all_games
-    Game.where('visitor_team_id = ? or home_team_id = ?', self.id, self.id)
+  def games
+    Game.where('visitor_team_id = ? or home_team_id = ?', self.id, self.id).order(match_day: :asc)
   end
 
   def self.n2

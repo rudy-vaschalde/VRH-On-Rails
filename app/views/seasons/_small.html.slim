@@ -4,7 +4,6 @@ table.table.table-striped.small
     - season.ordered_ranks.each_with_index do |rank, index|
       tr
         td.text-center.text-primary #{index+1}.
-        td
-          == render "teams/thumb", team: rank.team
+        td == render "teams/thumb", team: rank.team
         td.pts.text-primary.text-center = rank.points
 

@@ -4,8 +4,7 @@
       = image_tag @player.photo.url(:medium)
     .media-body
       h2
-        => @player.first_name
-        => @player.last_name
+        => @player.full_name
         => image_tag @player.team.logo.url(:thumb)
       h3.headline
         strong Numéro:

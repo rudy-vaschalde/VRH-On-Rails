@@ -8,7 +8,7 @@
 
   = f.text_field :name
   = f.text_field :city
-  = f.select "championship_id", options_from_collection_for_select(Championship.all, 'id', 'name', @team.championship_id)
+  = f.select :championship_id, options_from_collection_for_select(Championship.all, 'id', 'name', @team.championship_id)
   = f.file_field :logo
   = f.file_field :team_photo
   = f.submit

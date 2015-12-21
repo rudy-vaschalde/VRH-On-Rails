@@ -2,6 +2,7 @@
 
 ### TODO:
 
+* Add team decorator (ie full_name team name+city)
 * Testcases for rank.rb methods (game_count, points)
 * Setup HTTPS (need certificate)
 * Improve frontend
