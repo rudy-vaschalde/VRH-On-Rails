@@ -17,7 +17,7 @@
     tbody
       - @ranks.each do |rank|
         tr
-          td = rank.team.name
+          td = rank.team.full_name
           td = rank.win
           td = rank.loss
           td = rank.tie

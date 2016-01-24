@@ -5,9 +5,7 @@
       .team-logo
         = image_tag @team.logo.url(:medium), class: "team-logo"
     .media-body
-      h2.media-heading
-        => @team.name
-        => @team.city
+      h2.media-heading = @team.full_name
 .container-fluid.content
   - unless @team.players.empty?
     h3.headline Joueurs

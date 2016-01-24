@@ -1,2 +1,2 @@
 => image_tag team.logo.url(:thumb)
-=> link_to_if (team == Team.n2 or team == Team.n4), " #{team.name} #{team.city}", team
+=> link_to_if (team == Team.n2 or team == Team.n4), team.full_name, team

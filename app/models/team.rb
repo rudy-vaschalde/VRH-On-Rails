@@ -1,4 +1,5 @@
 class Team < ActiveRecord::Base
+  include Decorable
   has_many :seasons, through: :rank
   has_many :players
   has_many :goals

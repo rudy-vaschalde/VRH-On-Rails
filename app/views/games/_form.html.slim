@@ -18,13 +18,13 @@
             .media-left.media-middle
               #home-team-logo = image_tag Team.first.logo.url
             .media-body
-              = f.select :home_team_id, options_from_collection_for_select(Team.all, 'id', 'name', @game.home_team_id), {label: "Équipe d'accueil"}, data: {fetch_logo: "#home-team-logo"}
+              = f.select :home_team_id, options_from_collection_for_select(Team.all, 'id', 'full_name', @game.home_team_id), {label: "Équipe d'accueil"}, data: {fetch_logo: "#home-team-logo"}
         .col-xs-6
           .media
             .media-left.media-middle
               #visitor-team-logo = image_tag Team.first.logo.url
             .media-body
-              = f.select :visitor_team_id, options_from_collection_for_select(Team.all, 'id', 'name', @game.visitor_team_id), {label: "Équipe visiteur"}, data: {fetch_logo: "#visitor-team-logo"}
+              = f.select :visitor_team_id, options_from_collection_for_select(Team.all, 'id', 'full_name', @game.visitor_team_id), {label: "Équipe visiteur"}, data: {fetch_logo: "#visitor-team-logo"}
 
   .text-right = f.submit "Sauvegarder le match", class: "btn btn-success"
 
