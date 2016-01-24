@@ -9,6 +9,7 @@
   = f.select :team_id, options_from_collection_for_select(Team.all, 'id', 'name', @player.team_id)
   = f.text_field :first_name
   = f.text_field :last_name
+  = f.select :position, Player.positions.keys.map {|position| [position.titleize,position]}
   = f.text_field :surname
   = f.number_field :jersey
   = f.number_field :height

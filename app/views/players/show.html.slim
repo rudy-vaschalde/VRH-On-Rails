@@ -7,6 +7,9 @@
         => @player.full_name
         => image_tag @player.team.logo.url(:thumb)
       h3.headline
+        strong Position:
+        => @player.position
+      h3.headline
         strong Numéro:
         => @player.jersey
       h3.headline

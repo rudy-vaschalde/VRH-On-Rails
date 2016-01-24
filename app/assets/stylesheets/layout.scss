@@ -1,6 +1,10 @@
 // Layout styles
 #page-body {
-  padding: 51px 0 0 0 ;
+  padding: 61px 0 0 0 ;
+}
+
+.navbar-default .navbar-nav > li > a{
+    font-size: 1.3em;
 }
 
 #header-navbar{
@@ -26,7 +30,7 @@
 #admin-panel-toggle{
   display: inline-block;
   z-index: 1050;
-  margin: 2px;
+  margin: 15px;
   padding: 0;
   width: 35px;
   height: 30px;
