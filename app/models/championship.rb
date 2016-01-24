@@ -15,4 +15,8 @@ class Championship < ActiveRecord::Base
     @nat4 ||= Championship.find_by(name: "National 4")
   end
 
+  def self.jeunesse
+    @jeunesse ||= Championship.find_by(name: "Jeunesse")
+  end
+
 end

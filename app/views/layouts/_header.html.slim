@@ -26,6 +26,13 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
                             li = link_to "Equipe", Team.n4
                             li = link_to "Classement", Team.n4.championship.current_season
                             li = link_to "Résultats", games_path(team: Team.n4)
+                - unless Team.jeunes.nil?
+                    li.dropdown
+                        a.dropdown-toggle href="#" data-toggle="dropdown" Jeunesse
+                        ul.dropdown-menu
+                            li = link_to "Equipe", Team.jeunes
+                            li = link_to "Classement", Team.jeunes.championship.current_season
+                            li = link_to "Résultats", games_path(team: Team.jeunes)
                 li = link_to "Le Club", about_public_index_path
                 li = link_to "Contact", contact_public_index_path
                 / - if signed_in?
