@@ -98,6 +98,7 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    google-analytics-rails (1.0.0)
     i18n (0.7.0)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
@@ -228,6 +229,7 @@ DEPENDENCIES
   ckeditor
   devise
   draper
+  google-analytics-rails
   jquery-rails
   jquery-turbolinks
   paperclip (~> 4.3)

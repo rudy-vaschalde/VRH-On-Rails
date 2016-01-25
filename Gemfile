@@ -30,7 +30,7 @@ gem 'bootstrap_form'
 # Analytics
 #gem 'friendly_id', '~> 5.1.0'
 #gem 'metamagic'
-#gem 'google-analytics-rails'
+gem 'google-analytics-rails'
 
 group :development, :test do
   gem 'byebug'
