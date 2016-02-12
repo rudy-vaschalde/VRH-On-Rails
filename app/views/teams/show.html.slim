@@ -10,7 +10,7 @@
   - unless @team.players.empty?
     h3.headline Joueurs
     .row
-      - @team.players.each do |player|
+      - @team.players.order("position asc").each do |player|
         .col-md-3.col-xs-6.player-portrait
           == render player
 

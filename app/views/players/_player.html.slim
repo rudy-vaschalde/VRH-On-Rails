@@ -2,7 +2,8 @@
   = image_tag player.photo.url(:thumb), class: "player-thumb"
 
 .player-heading
-  h4 = link_to player.full_name, player
+  h4.pos.inline = player.position_small
+  h4.inline = link_to player.full_name, player
 
 span.jersey = player.jersey
 

@@ -7,6 +7,7 @@
         th first_name
         th Lastname
         th Surname
+        th pos
         th Height
         th Weight
         th Team
@@ -15,11 +16,12 @@
         th
 
     tbody
-      - @players.each do |player|
+      - @players.order("team_id").each do |player|
         tr
           td = player.first_name
           td = player.last_name
           td = player.surname
+          td = player.position
           td = player.height
           td = player.weight
           td
