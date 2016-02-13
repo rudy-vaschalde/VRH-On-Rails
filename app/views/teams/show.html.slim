@@ -16,6 +16,7 @@
   .row
     .col-md-6.col-xs-12
       h3.headline Calendrier
+      == render 'games/standings', games: @games, team: @team
     .col-md-6.col-xs-12
       == render @team.championship.current_season
 = content_for :admin

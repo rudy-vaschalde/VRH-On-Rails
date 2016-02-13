@@ -1,18 +1,5 @@
 .container-fluid.content
   h2 Calendrier
-  table.table.table-hover
-    thead
-      tr
-        th Date
-        th Locaux
-        th Résultat
-        th Visiteurs
-        - if user_signed_in?
-          th Actions
-    tbody
-      - @games.each do |game|
-        tr class=(game_status(game, @team) if @team)
-          == render game
-
+  == render 'games/standings', games: @team.games, team: @team
   - if user_signed_in?
     = link_to 'New Game', new_game_path, class: 'btn btn-primary'

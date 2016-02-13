@@ -1,0 +1,13 @@
+table.table.table-hover
+    thead
+      tr
+        th Date
+        th Locaux
+        th Résultat
+        th Visiteurs
+        - if user_signed_in?
+          th Actions
+    tbody
+      - @games.each do |game|
+        tr class=(game_status(game, @team) if @team)
+          == render game
