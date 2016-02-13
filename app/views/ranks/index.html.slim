@@ -5,6 +5,7 @@
     thead
       tr
         th Equipe
+        th Champ
         th Win
         th loss
         th tie
@@ -15,9 +16,10 @@
         th
 
     tbody
-      - @ranks.each do |rank|
+      - @ranks.order(:season_id).each do |rank|
         tr
           td = rank.team.full_name
+          td = rank.season.championship.name
           td = rank.win
           td = rank.loss
           td = rank.tie

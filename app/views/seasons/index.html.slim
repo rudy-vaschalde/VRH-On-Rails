@@ -11,7 +11,7 @@
         th
 
     tbody
-      - @seasons.each do |season|
+      - @seasons.order(:championship_id).each do |season|
         tr
           td = season.championship.name
           td = season.name

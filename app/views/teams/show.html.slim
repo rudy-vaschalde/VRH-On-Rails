@@ -13,7 +13,11 @@
       - @team.players.order("position asc").each do |player|
         .col-md-3.col-xs-6.player-portrait
           == render player
-
+  .row
+    .col-md-6.col-xs-12
+      h3.headline Calendrier
+    .col-md-6.col-xs-12
+      == render @team.championship.current_season
 = content_for :admin
   => link_to 'Edit', edit_team_path(@team), class: 'btn btn-warning'
   => link_to 'Back', teams_path, class: 'btn btn-primary'

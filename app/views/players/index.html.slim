@@ -16,7 +16,7 @@
         th
 
     tbody
-      - @players.order("team_id").each do |player|
+      - @players.order(:team_id).each do |player|
         tr
           td = player.first_name
           td = player.last_name

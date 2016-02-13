@@ -7,15 +7,18 @@
         th Name
         th City
         th Logo path
+        th Champ
         th
         th
         th
 
     tbody
-      - @teams.each do |team|
+      - @teams.order(:championship_id).each do |team|
         tr
           td = team.name
           td = team.city
+          td = image_tag team.logo.url(:thumb)
+          td = team.championship.name
           td = link_to 'Show', team, class: 'btn btn-default'
           td = link_to 'Edit', edit_team_path(team), class: 'btn btn-warning'
           td = link_to 'Destroy', team, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'

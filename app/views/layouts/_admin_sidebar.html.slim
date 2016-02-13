@@ -2,11 +2,17 @@ nav.admin-features.admin-push-menu
     h3 Administration
     ul.nav.nav-pills.nav-stacked
         li
+            => link_to "Articles", articles_path
+            => link_to_glyph nil, new_article_path, :plus, class: "add-btn"
+        li
             => link_to "Championnats", championships_path
             => link_to_glyph nil, new_championship_path, :plus, class: "add-btn"
         li
             => link_to "Saisons", seasons_path
             => link_to_glyph nil, new_season_path, :plus, class: "add-btn"
+        li
+            => link_to "Matchs", games_path
+            => link_to_glyph nil, new_game_path, :plus, class: "add-btn"
         li
             => link_to "Classements", ranks_path
             => link_to_glyph nil, new_rank_path, :plus, class: "add-btn"
@@ -16,9 +22,3 @@ nav.admin-features.admin-push-menu
         li
             => link_to "Joueurs", players_path
             => link_to_glyph nil, new_player_path, :plus, class: "add-btn"
-        li
-            => link_to "Matchs", games_path
-            => link_to_glyph nil, new_game_path, :plus, class: "add-btn"
-        li
-            => link_to "Articles", articles_path
-            => link_to_glyph nil, new_article_path, :plus, class: "add-btn"
