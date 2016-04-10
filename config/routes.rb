@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :articles
 
   root "public#index"
@@ -20,5 +21,7 @@ Rails.application.routes.draw do
   resources :teams
   resources :seasons
   resources :championships
+
   devise_for :users
+  match '/users',   to: 'users#index',   via: 'get'
 end

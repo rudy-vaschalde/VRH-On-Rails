@@ -25,3 +25,8 @@ nav.navbar.navbar-default.navbar-fixed-top#header-navbar
                 /         li
                 /     - if current_user.manager?
                 /         li
+    #home-login
+        - if signed_in?
+            = link_to "Déconnexion", destroy_user_session_path, :method => :delete, class: 'btn btn-default'
+        - else
+            = link_to "Connexion", new_session_path(:user), class: 'btn btn-default'

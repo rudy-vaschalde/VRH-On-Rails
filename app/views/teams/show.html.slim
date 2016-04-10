@@ -7,18 +7,19 @@
     .media-body
       h2.media-heading = @team.full_name
 .container-fluid.content
-  - unless @team.players.empty?
-    h3.headline Joueurs
+  .col-md-6.col-xs-12
+    - unless @team.players.empty?
+      h3.headline Joueurs
+      .row
+        - @team.players.order("position asc").each do |player|
+          .col-md-6.col-lg-4.col-xs-6.player-portrait
+            == render player
+  .col-md-6.col-xs-12
     .row
-      - @team.players.order("position asc").each do |player|
-        .col-md-3.col-xs-6.player-portrait
-          == render player
-  .row
-    .col-md-6.col-xs-12
+      == render @team.championship.current_season
+    .row
       h3.headline Calendrier
       == render 'games/standings', games: @games, team: @team
-    .col-md-6.col-xs-12
-      == render @team.championship.current_season
 = content_for :admin
   => link_to 'Edit', edit_team_path(@team), class: 'btn btn-warning'
   => link_to 'Back', teams_path, class: 'btn btn-primary'
