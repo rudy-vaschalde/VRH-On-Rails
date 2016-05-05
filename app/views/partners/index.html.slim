@@ -1,12 +1,40 @@
 .container-fluid.content
   h2 Tous les Partenaires du VRH
+  .col-md-12
+    - @partners.each do |partner|
+      .col-xs-6.col-sm-4.col-md-3.partner
+        == render partner
+        - if user_signed_in?
+          => link_to 'Edit', edit_partner_path(partner), class: 'btn btn-warning'
+          => link_to 'Destroy', partner, data: {:confirm => 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
 
-  - @partners.each do |partner|
-    .col-xs-6.col-sm-4.col-md-3
-      == render partner
-      - if user_signed_in?
-        => link_to 'Edit', edit_partner_path(partner), class: 'btn btn-warning'
-        => link_to 'Destroy', partner, data: {:confirm => 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+    - if user_signed_in?
+      = link_to 'New Partner', new_partner_path, class: 'btn btn-primary'
+  .col-md-12
+    h2 Vous souhaitez devenir partenaire ?
 
-  - if user_signed_in?
-    = link_to 'New Partner', new_partner_path, class: 'btn btn-primary'
+    .well
+      .row
+        p
+          | Vous souhaitez soutenir le Voreppe Roller Hockey? l'aider à développer son école de hockey ? Ou bien vous êtes tout simplement d'humeur généreuse ?
+          br
+          strong N'hésitez pas à nous contacter pour connaître tous les détails du partenariat !
+        p A noter que votre partenariat entraîne une réduction d’impôts égale à 60% de la somme versée pour une entreprise et à 66% pour les exploitants individuels ou pour les dons personnels.
+      .row
+        .col-md-4
+          h3.headline E-mail
+          p
+            i.glyphicon.glyphicon-envelope
+            span vorepperollerhockey@gmail.com
+        .col-md-4
+          h3.headline Président
+          p Christophe Locatelli
+          p
+            i.glyphicon.glyphicon-phone
+            span +336 18 09 63 19
+        .col-md-4
+          h3.headline Trésorier
+          p Rémi Galloin
+          p
+            i.glyphicon.glyphicon-phone
+            span +336 48 16 07 77
