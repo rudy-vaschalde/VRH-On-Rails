@@ -1,0 +1,12 @@
+.container-fluid.content
+  h2 Tous les Partenaires du VRH
+
+  - @partners.each do |partner|
+    .col-xs-6.col-sm-4.col-md-3
+      == render partner
+      - if user_signed_in?
+        => link_to 'Edit', edit_partner_path(partner), class: 'btn btn-warning'
+        => link_to 'Destroy', partner, data: {:confirm => 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+
+  - if user_signed_in?
+    = link_to 'New Partner', new_partner_path, class: 'btn btn-primary'

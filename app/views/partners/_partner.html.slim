@@ -1,0 +1,7 @@
+.partner-logo
+  span.helper
+  - if partner.logo?
+    = image_tag partner.logo.url(:medium)
+  - else
+    span = partner.name
+p = partner.adress

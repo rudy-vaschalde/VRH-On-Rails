@@ -1,15 +1,15 @@
 .container-fluid.content
-  .col-md-9.col-lg-10
+  .col-sm-12.col-md-9
     = image_tag @article.article_image.url(:original), class: 'article-img'
     h2 = @article.title
     small
       i.glyphicon.glyphicon-calendar
       => @article.created_at.to_formatted_s(:short)
     .article-content = @article.content.html_safe
-  .col-md-3.col-lg-2
+  .col-sm-12.col-md-3
     h3.headline Dernières news
     - @featured.each do |ft_Article|
-      figure.featured-thumb
+      figure.featured-thumb.col-sm-6.col-md-12
         .link-overlay
           .image-holder
             = image_tag ft_Article.article_image.url(:thumb), class: "article-thumb"

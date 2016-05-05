@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+
   devise_for :admins
-  resources :articles
 
   root "public#index"
 
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     delete :delete_goal, on: :member
   end
 
+  resources :partners
+  resources :articles
   resources :players
   resources :ranks
   resources :teams

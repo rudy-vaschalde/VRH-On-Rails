@@ -1,0 +1,13 @@
+.partner-logo{
+  height:150px;
+  text-align: center;
+  .helper{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  span{
+    color: $vrh-blue;
+    font-size: 200%;
+  }
+}

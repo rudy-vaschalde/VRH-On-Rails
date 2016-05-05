@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410095043) do
+ActiveRecord::Schema.define(version: 20160505152006) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              default: "", null: false
@@ -75,6 +75,17 @@ ActiveRecord::Schema.define(version: 20160410095043) do
   add_index "goals", ["passer_id"], name: "index_goals_on_passer_id"
   add_index "goals", ["scorer_id"], name: "index_goals_on_scorer_id"
   add_index "goals", ["team_id"], name: "index_goals_on_team_id"
+
+  create_table "partners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "adress"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string   "first_name"

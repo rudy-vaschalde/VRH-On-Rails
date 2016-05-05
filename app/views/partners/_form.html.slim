@@ -1,0 +1,13 @@
+= bootstrap_form_for @partner do |f|
+  - if @partner.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@partner.errors.count, "error")} prohibited this partner from being saved:"
+      ul
+        - @partner.errors.full_messages.each do |message|
+          li = message
+
+  = f.text_field :name
+  = f.text_field :adress
+  = f.file_field :logo
+
+  = f.submit
