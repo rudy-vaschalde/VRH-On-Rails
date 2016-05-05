@@ -7,14 +7,14 @@
     .media-body
       h2.media-heading = @team.full_name
 .container-fluid.content
-  .col-md-6.col-xs-12
+  .col-xs-12.col-md-6.col-lg-7
     - unless @team.players.empty?
       h3.headline Joueurs
       .row
         - @team.players.order("position asc").each do |player|
-          .col-md-6.col-lg-4.col-xs-6.player-portrait
+          .col-xs-6.col-md-6.col-lg-4.player-portrait
             == render player
-  .col-md-6.col-xs-12
+  .col-xs-12.col-md-6.col-lg-5
     .row
       == render @team.championship.current_season
     .row
