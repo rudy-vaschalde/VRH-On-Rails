@@ -1,10 +1,9 @@
 #partner-footer.container-fluid
   h3 Nos partenaires
   .row
-    - cache do
-      - Partner.featured.each do |partner|
-        .col-xs-6.col-sm-4.col-md-3
-          = render "partners/partner", partner: partner
+    - Partner.featured.each do |partner|
+      .col-xs-6.col-sm-4.col-md-3
+        = render "partners/partner", partner: partner
 
 
 footer#footer.container-fluid
